@@ -1,7 +1,7 @@
 const head = [
     {
         id:1,
-        name: 'Тест',
+        name: 'Стройматериалы',
         slug: 'test'
     },
     {
