@@ -22,11 +22,11 @@
     <div class="relative bg-white">
         <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
         <div class="relative z-20">
-            <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
+            <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 sm:py-3 lg:px-8 md:justify-start md:space-x-10">
                 <div>
-                    <a href="#" class="flex">
-                        <span class="sr-only">Workflow</span>
-                        <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+                    <a href="/" class="flex">
+                        <span class="sr-only">Logo</span>
+                        <img class="h-14 w-auto sm:h-14" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
