@@ -8,10 +8,10 @@
         <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div class="pr-16  sm:text-center sm:px-16">
                 <div class="font-medium text-white text-lg">
-                    <span class="md:hidden">тел: 8 (800) 555-8-111</span>
-                    <span class="hidden md:inline">тел: 8 (800) 555-8-111</span>
-                    <span class="block sm:ml-4 sm:inline-block">почта: info@orbita-stroy.com</span>
-                    <span class="block sm:ml-4 sm:inline-block">режим: Пн-Пт 8:00-17:30; Сб 9:00-16:00</span>
+                    <span class="md:hidden">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
+                    <span class="hidden md:inline">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
+                    <span class="block sm:ml-5 sm:inline-block">почта: <strong>info@orbita-stroy.com</strong></span>
+                    <span class="block sm:ml-5 sm:inline-block">режим: Пн-Пт 8:00-17:30; Сб 9:00-16:00</span>
                 </div>
             </div>
         </div>
