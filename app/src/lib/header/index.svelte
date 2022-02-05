@@ -361,7 +361,7 @@
                         </div>
                     </nav>
                     <div class="flex items-center md:ml-12">
-                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Корзина (0) </a>
+                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Корзина <div class="ml-1 animate-pulse"> (0)</div> </a>
                     </div>
                 </div>
             </div>
@@ -392,13 +392,10 @@
                         <div class="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-7 ">
                             {#each head as {slug, name}}
                             <a href='/rubric/{slug}'
-                                      class="flex flex-col bg-gradient-to-tr from-indigo-300 via-indigo-700 to-indigo-600 border-b border-red-900 p-4 text-center sm:border-0 sm:border-r sm:border-l">
+                                      class="flex flex-col bg-gradient-to-tr from-indigo-400 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l">
                                 <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
                                     { name }
                                 </span>
-                                <!--                  <dd class="order-1 text-5xl font-extrabold text-indigo-600">-->
-                                <!--                    86-->
-                                <!--                  </dd>-->
                             </a>
 
                             {/each}
