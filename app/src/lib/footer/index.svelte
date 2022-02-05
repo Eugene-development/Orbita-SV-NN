@@ -1,3 +1,9 @@
+<script>
+    const now = new Date();
+    const year = now.getFullYear()
+
+</script>
+
 <div>
     <div class="w-screen  py-10 bg-gray-50">
         <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
@@ -247,7 +253,8 @@
                     <!--          </a>-->
                 </div>
                 <p class="mt-8 text-base text-gray-600 md:mt-0 md:order-1">
-                    &copy; 2021 Интернет магазин стройматериалов, отделочных материалов и пластиковых окон "Орбита-Строй".
+                    &copy; 2015-{year} Интернет магазин стройматериалов, отделочных материалов и пластиковых окон "Орбита-Строй".
+                    <br>Обслуживание сайта +7 (495) 147-55-50
                 </p>
             </div>
         </div>
