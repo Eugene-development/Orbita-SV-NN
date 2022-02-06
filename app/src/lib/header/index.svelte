@@ -376,7 +376,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-extrabold text-gray-800 sm:text-4xl">
-                    Интернет-магазин строительных и отделочных материалов "Орбита-строй"
+                   Посетите каталог интернет-магазина строительных и отделочных материалов "Орбита-строй"
                 </h2>
                 <p class="mt-3 text-xl text-indigo-800 sm:mt-4">
                     При заказе через каталог стройматериалов на сайте для вас скидка 5%
@@ -392,7 +392,7 @@
                         <div class="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-7 ">
                             {#each head as {slug, name}}
                             <a href='/rubric/{slug}'
-                                      class="flex flex-col bg-gradient-to-tr from-indigo-400 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l">
+                                      class="flex flex-col bg-gradient-to-tr from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l">
                                 <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
                                     { name }
                                 </span>

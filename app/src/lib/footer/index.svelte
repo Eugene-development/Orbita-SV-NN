@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <footer class="bg-gradient-to-b from-indigo-50 to-indigo-200" aria-labelledby="footerHeading">
+    <footer class="bg-gradient-to-tr from-indigo-50 to-indigo-300" aria-labelledby="footerHeading">
         <h2 id="footerHeading" class="sr-only">Footer</h2>
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
