@@ -82,7 +82,7 @@
 
                 <!-- Contact form -->
                 <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                    <h3 class="text-lg font-medium text-gray-900">Отправить коммерческое предложение</h3>
+                    <h3 class="text-lg font-medium text-gray-900 border-b pb-2">Отправить коммерческое предложение:</h3>
                     <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                         <div>
                             <label for="first_name" class="block text-sm font-medium text-gray-900">Имя</label>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="sm:col-span-2">
                             <div class="flex justify-between">
-                                <label for="message" class="block text-sm font-medium text-gray-900">Сообщение</label>
+                                <label for="message" class="block text-sm font-medium text-gray-900">Комментарий</label>
                                 <span id="message-max" class="text-sm text-gray-500">Максимум 500 символов</span>
                             </div>
                             <div class="mt-1">
