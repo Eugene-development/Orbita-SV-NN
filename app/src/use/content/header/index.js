@@ -2,37 +2,37 @@ const head = [
     {
         id:1,
         name: 'Стройматериалы',
-        slug: 'test'
+        slug: 'stroymaterialy'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:2,
+        name: 'Изоляция',
+        slug: 'izolyatsiya'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:3,
+        name: 'Отделка',
+        slug: 'otdelka'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:4,
+        name: 'Инструмент',
+        slug: 'instrument'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:5,
+        name: 'Сантехника',
+        slug: 'santehnika'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:6,
+        name: 'Электротовары',
+        slug: 'elektrotovary'
     },
     {
-        id:1,
-        name: 'Тест',
-        slug: 'test'
+        id:7,
+        name: 'Окна',
+        slug: 'okna'
     },
 
 ]
