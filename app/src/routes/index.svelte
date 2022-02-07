@@ -15,10 +15,16 @@
 
 <script>
 	export let data;
+
+	const page = 'Главная';
+	const title = 'База строительных и отделочных материалов "Орбита-Строй"'
+	const description = 'Интернет-магазин строительных и отделочных материалов "Орбита-строй"\n'
+
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{title}</title>
+	<meta name="description" content="{description}">
 </svelte:head>
 
 
