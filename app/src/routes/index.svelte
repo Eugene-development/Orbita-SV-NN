@@ -1,14 +1,10 @@
 <script context="module">
 	export async function load({ params, fetch, session, stuff }) {
 
-		const res = await fetch("/api/heads")
+		const res = await fetch("/api/header/heads")
 		const heads = await res.json();
 
-
-		// console.log(heads)
 		const data = heads.heads.data
-
-		console.log(data)
 		return {
 			props: {
 				data
