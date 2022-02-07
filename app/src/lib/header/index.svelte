@@ -53,10 +53,10 @@
                 </div>
                 <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
                     <nav class="flex space-x-10">
-                        <a href="/company" class="text-base font-medium text-gray-500 hover:text-gray-900"> Компания </a>
+                        <a href="/company" class="text-lg font-medium text-gray-600 hover:text-gray-900"> Компания </a>
                         <div>
                             <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                            <button on:click={changeVisibleInformationMenu} type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium focus:outline-none focus:text-red-700" aria-expanded="false">
+                            <button on:click={changeVisibleInformationMenu} type="button" class="text-gray-600 group bg-white rounded-md inline-flex items-center text-lg font-medium focus:outline-none focus:text-red-700" aria-expanded="false">
                                 <span>Информация</span>
                                 <!--
                                   Heroicon name: solid/chevron-down
@@ -234,12 +234,12 @@
                                 </div>
                             {/if}
                         </div>
-                        <a href="/blog" class="text-base font-medium text-gray-500 hover:text-gray-900"> Блог </a>
-                        <a href="/information/contact" class="text-base font-medium text-gray-500 hover:text-gray-900"> Контакты </a>
-                        <a href="https://vk.com/orbita_stroy" target="_blank" class="text-base font-medium text-gray-500 hover:text-gray-900"> VK </a>
+                        <a href="/blog" class="text-lg font-medium text-gray-600 hover:text-gray-900"> Блог </a>
+                        <a href="/information/contact" class="text-lg font-medium text-gray-600 hover:text-gray-900"> Контакты </a>
+                        <a href="https://vk.com/orbita_stroy" target="_blank" class="text-lg font-medium text-gray-600 hover:text-gray-900"> VK </a>
                     </nav>
                     <div class="flex items-center md:ml-12">
-                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Корзина <div class="ml-1 animate-pulse"> (0)</div> </a>
+                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-700/50"> Корзина <div class="ml-1 animate-pulse"> (0)</div> </a>
                     </div>
                 </div>
             </div>
@@ -267,7 +267,7 @@
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="w-full mx-auto">
 
-                        <div class="rounded-lg bg-white shadow-lg lg:grid lg:grid-cols-7 ">
+                        <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
                             {#each head as {slug, name}}
                             <a href='/rubric/{slug}'
                                       class="flex flex-col bg-gradient-to-tr from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l">

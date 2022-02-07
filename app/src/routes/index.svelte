@@ -28,9 +28,9 @@
 </svelte:head>
 
 
-{#each data as {name, slug}}
-	<p class="px-2 border text-2xl bg-white w-full m-3">{name}-{slug}</p>
-{/each}
+<!--{#each data as {name, slug}}-->
+<!--	<p class="px-2 border text-2xl bg-white w-full m-3">{name}-{slug}</p>-->
+<!--{/each}-->
 
 <div class="mt-20 max-w-7xl mx-auto sm:px-6 lg:px-8">
 	<div class="lg:text-center">
