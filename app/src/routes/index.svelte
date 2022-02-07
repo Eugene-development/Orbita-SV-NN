@@ -1,5 +1,5 @@
 <script context="module">
-	export async function load({ params, fetch, session, stuff }) {
+	export const load = async ({fetch}) => {
 
 		const res = await fetch("/api/header/heads")
 		const heads = await res.json();
@@ -10,7 +10,6 @@
 				data
 			}
 		}
-
 	}
 </script>
 
