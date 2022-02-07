@@ -1,15 +1,35 @@
 <script context="module">
-	export const prerender = true;
+	export async function load({ params, fetch, session, stuff }) {
+
+		const res = await fetch("/api/heads")
+		const heads = await res.json();
+
+
+		// console.log(heads)
+		const data = heads.heads.data
+
+		console.log(data)
+		return {
+			props: {
+				data
+			}
+		}
+
+	}
 </script>
 
 <script>
-
+	export let data;
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
+
+{#each data as {name}}
+	<p class="px-2 border text-2xl bg-white w-full m-3">{name}</p>
+{/each}
 
 <div class="mt-20 max-w-7xl mx-auto sm:px-6 lg:px-8">
 	<div class="lg:text-center">
