@@ -12,7 +12,7 @@
     <div class="relative bg-gradient-to-tr from-indigo-500 via-indigo-600 to-indigo-500">
         <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div class="pr-16  sm:text-center sm:px-16">
-                <div class="font-medium text-white text-lg">
+                <div class="font-medium text-white text-base">
                     <span class="md:hidden">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
                     <span class="hidden md:inline">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
                     <span class="block sm:ml-5 sm:inline-block">почта: <strong>info@orbita-stroy.com</strong></span>
