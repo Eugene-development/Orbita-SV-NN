@@ -236,7 +236,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-extrabold text-gray-800 sm:text-4xl">
-                   Посетите каталог интернет-магазина строительных и отделочных материалов "Орбита-строй"
+                   Доставка строительных и отделочных материалов до объекта
                 </h2>
                 <p class="mt-3 text-xl text-indigo-800 sm:mt-4">
                     При заказе через каталог стройматериалов на сайте для вас скидка 5%
