@@ -5,13 +5,13 @@
 
 
     import {useVisible} from "../../use/visible";
-    import {visibleInformationMenu} from '../../stores.js';
+    import {informationMenu} from '../../stores.js';
 
     const {invert} = useVisible;
 
-    const changeVisibleInformationMenu = () => visibleInformationMenu.update(invert)
-    let visibleFormPhone;
-    visibleInformationMenu.subscribe(value => visibleFormPhone = value);
+    const changeVisibleInformationMenu = () => informationMenu.update(invert)
+    let visibleInformationMenu;
+    informationMenu.subscribe(value => visibleInformationMenu = value);
 
 </script>
 
@@ -39,7 +39,7 @@
                 <div>
                     <a href="/" class="flex">
                         <span class="sr-only">Logo</span>
-                        <img class="h-14 w-auto sm:h-14" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="">
+                        <img class="h-14 w-auto sm:h-14" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
@@ -78,7 +78,7 @@
                                 From: "opacity-100 translate-y-0"
                                 To: "opacity-0 -translate-y-1"
                             -->
-                            {#if visibleFormPhone}
+                            {#if visibleInformationMenu}
                                 <div class="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
                                     <div class="absolute inset-0 flex">
                                         <div class="bg-white w-1/2"></div>
