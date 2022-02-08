@@ -2,7 +2,7 @@
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "../../use/content/header";
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
-    const {left, right} = information[0]
+    const {left: leftInfo, right: rightInfo} = information[0]
 
     import {useVisible} from "../../use/visible";
     import {informationMenu} from '../../stores.js';
@@ -89,7 +89,7 @@
                                             <div>
 <!--                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>-->
                                                 <ul role="list" class="mt-5 space-y-6">
-                                                    {#each left as {href, displayName}}
+                                                    {#each leftInfo as {href, displayName}}
                                                     <li class="flow-root">
                                                         <a href="{href}" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                                             <!-- Heroicon name: outline/information-circle -->
@@ -105,7 +105,7 @@
                                             <div>
 <!--                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>-->
                                                 <ul role="list" class="mt-5 space-y-6">
-                                                    {#each right as {href, displayName}}
+                                                    {#each rightInfo as {href, displayName}}
                                                         <li class="flow-root">
                                                             <a href="{href}" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                                                 <!-- Heroicon name: outline/information-circle -->
