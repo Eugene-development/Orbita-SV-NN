@@ -1,7 +1,7 @@
 <script>
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "../../use/content/header";
-    const {head} = useHead;
+    const {head, information} = useHead;
 
 
     import {useVisible} from "../../use/visible";

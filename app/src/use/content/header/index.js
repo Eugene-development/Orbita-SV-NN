@@ -88,5 +88,6 @@ const head = [
 ]
 
 export const useHead = {
+    information,
     head
 }
