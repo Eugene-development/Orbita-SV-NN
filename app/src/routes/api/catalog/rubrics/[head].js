@@ -1,6 +1,21 @@
 export const get = async ({ params }) => {
     const head = 5;
     // const { head } = params;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const domain = import.meta.env.VITE_API_CRUD;
     const url = `${ domain }/get-head/${ head }`;
     const headers = {

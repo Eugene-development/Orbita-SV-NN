@@ -2,13 +2,10 @@
     export const load = async ({fetch, params}) => {
         const head = params.slug;
 
-        console.log(head)
-
         const res = await fetch(`/api/catalog/rubrics/${head}`)
         const rubrics = await res.json();
 
          const data = rubrics.rubricsXXX.data[0]
-        console.log(data)
 
 
         return {
