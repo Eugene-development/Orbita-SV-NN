@@ -1,4 +1,6 @@
 <script>
+    import {clickOutside} from "../../use/click_outside.js";
+
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "../../use/content/header";
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
@@ -93,7 +95,7 @@
                                                 <ul role="list" class="mt-5 space-y-6">
                                                     {#each leftInfo as {href, displayName}}
                                                     <li class="flow-root">
-                                                        <a href="{href}" on:click={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                                        <a href="{href}" on:click={changeVisibleInformationMenu} use:clickOutside on:outclick={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                                             <!-- Heroicon name: outline/information-circle -->
                                                             <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -109,7 +111,7 @@
                                                 <ul role="list" class="mt-5 space-y-6">
                                                     {#each rightInfo as {href, displayName}}
                                                         <li class="flow-root">
-                                                            <a href="{href}" on:click={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                                            <a href="{href}" on:click={changeVisibleInformationMenu} on:outclick={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                                                 <!-- Heroicon name: outline/information-circle -->
                                                                 <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -193,13 +195,11 @@
 
                         <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
                             {#each head as {id, slug, name}}
-                                <button on:click={setId(id)}>
                                     <a href='/rubric/{slug}' class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
                                         <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
                                             { name }
                                         </span>
                                     </a>
-                                </button>
 
                             {/each}
                         </div>
