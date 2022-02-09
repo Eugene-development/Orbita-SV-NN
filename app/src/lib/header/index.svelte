@@ -92,10 +92,10 @@
                                         <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                             <div>
 <!--                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>-->
-                                                <ul role="list" class="mt-5 space-y-6">
+                                                <ul role="list" class="mt-5 space-y-6" use:clickOutside on:outclick={changeVisibleInformationMenu}>
                                                     {#each leftInfo as {href, displayName}}
                                                     <li class="flow-root">
-                                                        <a href="{href}" on:click={changeVisibleInformationMenu} use:clickOutside on:outclick={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                                        <a href="{href}" on:click={changeVisibleInformationMenu}  class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                                             <!-- Heroicon name: outline/information-circle -->
                                                             <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
