@@ -1,7 +1,11 @@
 <script context="module">
+    import { page } from '$app/stores'
+    const id = $page.url.searchParams.get('id')
+
     export const load = async ({fetch, params}) => {
         const head = params.slug;
 
+        console.log(id)
         const res = await fetch(`/api/catalog/rubrics/${head}`)
         const rubrics = await res.json();
 
@@ -17,9 +21,12 @@
 </script>
 
 <script>
+    import { page } from '$app/stores'
+    const id = $page.url.searchParams.get('id')
+
     export let data
 </script>
-
+<p>{id}</p>
 <p>123-{data.name}</p>
 
 <!--{#each data as {id, name}}-->

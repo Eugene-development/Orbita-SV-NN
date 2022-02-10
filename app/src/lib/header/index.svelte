@@ -15,7 +15,7 @@
     let visibleInformationMenu;
     informationMenu.subscribe(value => visibleInformationMenu = value);
 
-    const setId = (id) => localStorage.setItem('inCart', id);
+    // const setId = (id) => localStorage.setItem('inCart', id);
 
 </script>
 
@@ -195,10 +195,13 @@
 
                         <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
                             {#each head as {id, slug, name}}
-                                    <a href='/rubric/{slug}' class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
+                                    <a href='/rubric/{slug}/?id={id}'
+
+                                       class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
                                         <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
                                             { name }
                                         </span>
+                                        <input type="hidden" name="id" bind:value={id}>
                                     </a>
 
                             {/each}
