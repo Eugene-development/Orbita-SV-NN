@@ -2,7 +2,7 @@
     export const load = async ({fetch, params}) => {
         const head = params.slug;
 
-        // console.log(id)
+        console.log(params)
         const res = await fetch(`/api/catalog/rubrics/${head}`)
         const rubrics = await res.json();
 
