@@ -3,11 +3,11 @@
 
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "../../use/content/header";
-    const {head, information} = useHead; //TODO влоенную деструктуризацию примени
-    const {left: leftInfo, right: rightInfo} = information[0]
-
     import {useVisible} from "../../use/visible";
     import {informationMenu} from '../../stores.js';
+
+    const {head, information} = useHead; //TODO влоенную деструктуризацию примени
+    const {left: leftInfo, right: rightInfo} = information[0]
 
     const {invert} = useVisible;
 
@@ -192,22 +192,16 @@
                 <div class="absolute inset-0 h-1/2 bg-gray-50 border-b border-gray-200"></div>
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="w-full mx-auto">
-
                         <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
                             {#each head as {id, slug, name}}
-                                    <a href='/rubric/{slug}/?id={id}'
-
-                                       class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
-                                        <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
-                                            { name }
-                                        </span>
-                                        <input type="hidden" name="id" bind:value={id}>
-                                    </a>
-
+                                <a sveltekit:prefetch href='/rubric/{slug}/?id={id}'
+                                   class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
+                                <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
+                                    { name }
+                                </span>
+                                </a>
                             {/each}
                         </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

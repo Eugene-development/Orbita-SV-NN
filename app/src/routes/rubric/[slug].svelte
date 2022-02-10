@@ -13,12 +13,12 @@
 </script>
 
 <script>
-    import { page } from '$app/stores'
-    const id = $page.url.searchParams.get('id')
+    // import { page } from '$app/stores'
+    // const id = $page.url.searchParams.get('id')
 
     export let data
 </script>
-<p>{id}</p>
+<!--<p>{id}</p>-->
 <p>123-{data.name}</p>
 
 <!--{#each data as {id, name}}-->
