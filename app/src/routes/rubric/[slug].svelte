@@ -2,12 +2,11 @@
 
     export const load = async ({fetch, params, url}) => {
 
-        const head = params.slug;
-        console.log(url.searchParams.get('id'))
-        const res = await fetch(`/api/catalog/rubrics/${head}`)
+        const idHead = url.searchParams.get('id');
+        const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const rubrics = await res.json();
 
-        const data = rubrics.rubricsXXX.data[0]
+        const data = rubrics.rubrics.data[0]
 
 
         return {
