@@ -1,7 +1,6 @@
 <script>
     const now = new Date();
     const year = now.getFullYear()
-
 </script>
 
 <div>
@@ -25,7 +24,7 @@
         </div>
     </div>
 
-    <footer class="bg-indigo-600" aria-labelledby="footerHeading">
+    <footer class="bg-gray-900" aria-labelledby="footerHeading">
         <h2 id="footerHeading" class="sr-only">Footer</h2>
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
@@ -208,7 +207,7 @@
                         <label for="emailAddress" class="sr-only">Email address</label>
                         <input type="email" id="emailAddress" required class="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400" placeholder="Ваша почта">
                         <div class="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                            <button type="submit" class="w-full bg-red-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-red-700">
+                            <button type="submit" class="w-full bg-red-700 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-red-700">
                                 Подписаться
                             </button>
                         </div>

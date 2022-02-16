@@ -1,9 +1,9 @@
 <script>
-    import {clickOutside} from "../../use/click_outside.js";
+    import {clickOutside} from "$lib/use/click_outside.js";
 
     import MobileMenu from "./mobile/index.svelte"
-    import {useHead} from "../../use/content/header";
-    import {useVisible} from "../../use/visible";
+    import {useHead} from "$lib/use/content/header";
+    import {useVisible} from "$lib/use/visible";
     import {informationMenu} from '../../stores.js';
 
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
@@ -43,7 +43,7 @@
                 <div>
                     <a href="/" class="flex">
                         <span class="sr-only">Logo</span>
-                        <img class="h-14 w-auto sm:h-14" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
+                        <img class="h-12 w-auto sm:h-12" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">

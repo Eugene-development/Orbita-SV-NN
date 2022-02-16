@@ -1,5 +1,5 @@
 <script>
-    import {useActions} from "../../../use/content/actions";
+    import {useActions} from "$lib/use/content/actions";
     const {actions} = useActions
 </script>
 
