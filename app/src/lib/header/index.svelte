@@ -28,7 +28,7 @@
                     <span class="md:hidden">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
                     <span class="hidden md:inline">тел.: <strong>8 (800) 555-8-111</strong> (звонок бесплатный)</span>
                     <span class="block sm:ml-5 sm:inline-block">почта: <strong>info@orbita-stroy.com</strong></span>
-                    <span class="block sm:ml-5 sm:inline-block">режим: Пн-Пт 8:00-17:30; Сб 9:00-16:00</span>
+<!--                    <span class="block sm:ml-5 sm:inline-block">режим: Пн-Пт 8:00-17:30; Сб 9:00-16:00</span>-->
                 </div>
             </div>
         </div>
