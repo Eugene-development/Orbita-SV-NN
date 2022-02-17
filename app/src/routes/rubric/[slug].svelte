@@ -4,12 +4,11 @@
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const rubrics = await res.json();
         const data = rubrics.rubrics.data[0]
-        const name = data.name
+        const nameRubric = data.name
         const rubric = data.rubric
-        console.log(rubric)
         return {
             props: {
-                name,
+                nameRubric,
                 rubric
             }
         }
@@ -20,7 +19,7 @@
     // import { page } from '$app/stores'
     // const id = $page.url.searchParams.get('id')
 
-    export let name
+    export let nameRubric
     export let rubric
 </script>
 <!--<p>{id}</p>-->
@@ -38,7 +37,7 @@
                 <!--              Раздел-->
                 <!--            </h2>-->
                 <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
-                    {name}
+                    {nameRubric}
                 </h1>
                 <p class="text-xl text-gray-700">
                     Выберите интересующую вас рубрику в этом разделе.
@@ -59,11 +58,11 @@
                         <div class="px-6 py-8 text-center sm:p-10 sm:pb-6">
                             <div>
                                 <h3 class="inline-flex px-8 py-1 rounded-full text-sm  font-semibold tracking-wide uppercase bg-indigo-50 text-indigo-900" id="tier-standard">
-                                    { name }
+                                    { nameRubric }
                                 </h3>
                             </div>
                             <div class="mt-4  text-center items-baseline text-2xl font-extrabold">
-                                <!--{{ rubric.name }}-->
+                                { name }
                             </div>
                             <!--                  <p class="mt-5 text-lg text-gray-500">-->
                             <!--                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.-->
@@ -121,7 +120,7 @@
                             </ul>
                             <div class="mb-2 rounded-md shadow">
                                 <a href="'/category/' + rubric.slug"
-                                        class=" block w-full bg-gradient-to-r from-red-400 via-red-800 to-red-400 border border-red-900 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-red-900">
+                                        class=" block w-full bg-gradient-to-r from-indigo-400 via-indigo-800 to-indigo-400 border border-red-900 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-red-900">
                                     Просмотреть
                                 </a>
                             </div>
