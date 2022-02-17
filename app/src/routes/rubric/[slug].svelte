@@ -4,30 +4,25 @@
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const rubrics = await res.json();
         const data = rubrics.rubrics.data[0]
+        console.log(data)
         const nameRubric = data.name
         const rubric = data.rubric
+        const text = data.text
         return {
             props: {
                 nameRubric,
-                rubric
+                rubric,
+                text
             }
         }
     }
 </script>
 
 <script>
-    // import { page } from '$app/stores'
-    // const id = $page.url.searchParams.get('id')
-
     export let nameRubric
     export let rubric
+    export let text
 </script>
-<!--<p>{id}</p>-->
-<!--{#each data as {name}}-->
-<!--    <p class="px-2 border text-2xl bg-white w-full m-3">{name}</p>-->
-<!--{/each}-->
-
-
 
 <div class="bg-white">
     <div class="pt-4 sm:pt-8 lg:pt-12">
@@ -138,10 +133,10 @@
                     <div class="flex-1">
                         <div>
                             <h2 class="inline-flex px-4 py-1 rounded-full text-2xl font-semibold tracking-wide bg-white text-gray-800">
-                                <!--{{ head.text.titleText }}-->
+                                { text.titleText }
                             </h2>
                         </div>
-                        <div class="mt-4 text-lg text-gray-600" v-html="head.text.text"></div>
+                        <div class="mt-4 text-lg text-gray-600">{@html text.text}</div>
                     </div>
                 </div>
                 <div class="mt-6 rounded-md shadow lg:flex-shrink-0">
