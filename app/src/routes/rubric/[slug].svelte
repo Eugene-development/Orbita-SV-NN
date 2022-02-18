@@ -1,10 +1,11 @@
 <script context="module">
+
     export const load = async ({fetch, params, url}) => {
         const idHead = url.searchParams.get('id');
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const rubrics = await res.json();
         const data = rubrics.rubrics.data[0]
-        console.log(data)
+        // console.log(data)
         const nameRubric = data.name
         const rubric = data.rubric
         const text = data.text
@@ -113,10 +114,10 @@
                                 <!--                      </p>-->
                                 <!--                    </li>-->
                             </ul>
-                            <div class="mb-2 rounded-md shadow">
+                            <div class="mb-2 rounded-md shadow-xl shadow-indigo-700/50">
                                 <a href="'/category/' + rubric.slug"
-                                        class=" block w-full bg-gradient-to-r from-indigo-400 via-indigo-800 to-indigo-400 border border-red-900 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-red-900">
-                                    Просмотреть
+                                        class="ease-in duration-300 block w-full bg-gradient-to-r from-indigo-500 via-indigo-800 to-indigo-500 hover:from-indigo-800 hover:via-indigo-500 hover:to-indigo-800 border border-indigo-900 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-indigo-900">
+                                    В каталог
                                 </a>
                             </div>
                         </div>
@@ -126,7 +127,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-5">
+        <div class="mt-8 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-8">
             <div class="max-w-md mx-auto lg:max-w-7xl">
                 <div  class="rounded-lg bg-gray-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">
                     <!--            <div v-for="(text, idx) of head.text" :key="text.id" class="rounded-lg bg-gray-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">-->
@@ -136,7 +137,7 @@
                                 { text.titleText }
                             </h2>
                         </div>
-                        <div class="mt-4 text-lg text-gray-600">{@html text.text}</div>
+                        <div class="mt-8 text-lg text-gray-600">{@html text.text}</div>
                     </div>
                 </div>
                 <div class="mt-6 rounded-md shadow lg:flex-shrink-0">
