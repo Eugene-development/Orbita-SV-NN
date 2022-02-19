@@ -84,16 +84,24 @@
 
 
             <!-- This example requires Tailwind CSS v2.0+ -->
-<!--            <div class="py-1 relative shadow-lg rounded-lg border-2">-->
-<!--                &lt;!&ndash;          <div class="py-1 relative bg-gradient-to-b from-gray-50 via-gray-800 to-gray-50 shadow-lg rounded-lg">&ndash;&gt;-->
-<!--                <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">-->
-<!--                    <div v-if="rubric.text" class="text-center px-8">-->
-<!--                        <p class="font-medium text-gray-800 text-xl">-->
-<!--                            <span v-html="rubric.text.descriptionText"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="py-1 relative shadow-lg rounded-lg border-2">
+                <!--          <div class="py-1 relative bg-gradient-to-b from-gray-50 via-gray-800 to-gray-50 shadow-lg rounded-lg">-->
+                <div class="max-w-full mx-auto py-3 px-3 sm:px-6 lg:px-8">
+                    {#if text}
+                    <div class="text-center px-8">
+                        <p class="font-medium text-gray-800 text-xl">
+                            <span>{text.descriptionText}</span>
+                        </p>
+                    </div>
+                    {:else }
+                        <div class="text-center px-8">
+                            <p class="font-medium text-gray-800 text-xl">
+                                <span>Скидки</span>
+                            </p>
+                        </div>
+                    {/if}
+                </div>
+            </div>
 
 
 <!--            <div  class="relative max-w-7xl mx-auto">-->
