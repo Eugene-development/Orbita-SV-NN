@@ -56,7 +56,7 @@
                     <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
 
                     {#each category as {id, slug, name, product}}
-                    <a href="'/products/' + category.slug"
+                    <a sveltekit:prefetch href='/products/{slug}/?id={id}'
                               class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <!-- Heroicon name: outline/folder -->
                         <!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
@@ -116,14 +116,14 @@
                 <!--          <hr class="mt-8">-->
                 <div class="mt-8 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
 
-                    {#each category as {name, text}}
+                    {#each category as {id, name, slug, text}}
                     <div class=" flex flex-col rounded-lg shadow-lg overflow-hidden border-2">
                         <!--            <div class="flex-shrink-0">-->
                         <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
                         <!--            </div>-->
                         <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                             <div class="flex-1">
-                                <a href="'/products/' + category.slug">
+                                <a sveltekit:prefetch href='/products/{slug}/?id={id}'>
                                     <p class="text-xl font-semibold text-gray-900">
                                         { name }
                                     </p>
