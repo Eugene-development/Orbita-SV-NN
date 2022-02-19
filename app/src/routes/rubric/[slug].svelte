@@ -48,7 +48,7 @@
                 <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
 
 
-                    {#each rubric as {name}}
+                    {#each rubric as {id, slug, name}}
                         <div
                          class="flex flex-col rounded-lg shadow-lg overflow-hidden border-2">
                         <div class="px-6 py-8 text-center sm:p-10 sm:pb-6">
@@ -115,7 +115,7 @@
                                 <!--                    </li>-->
                             </ul>
                             <div class="mb-2 rounded-md shadow-xl shadow-indigo-700/50">
-                                <a href="'/category/' + rubric.slug"
+                                <a sveltekit:prefetch href='/category/{slug}/?id={id}'
                                         class="ease-in duration-300 block w-full bg-gradient-to-r from-indigo-500 via-indigo-800 to-indigo-500 hover:from-indigo-800 hover:via-indigo-500 hover:to-indigo-800 border border-indigo-900 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-indigo-900">
                                     В каталог
                                 </a>
