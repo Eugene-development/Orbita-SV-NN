@@ -36,7 +36,7 @@
     </div>
 
     <div class="mx-4 flex  ">
-        <div class="flex w-1/5 max-w-sm flex-col flex-grow border-r border-gray-200 pt-8 pb-4 overflow-y-auto           hidden xl:block">
+        <div class="flex w-1/3 max-w-sm flex-col flex-grow border-r border-gray-200 pt-8 pb-4 overflow-y-auto hidden xl:block">
             <div class="mb-6 flex items-center flex-shrink-0 px-4">
                 <!--          <svg class="text-gray-500 mr-3 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"-->
                 <!--               xmlns="http://www.w3.org/2000/svg">-->
@@ -45,8 +45,8 @@
                 <!--              stroke-linecap="round" stroke-linejoin="round"-->
                 <!--              stroke-width="2"/>-->
                 <!--          </svg>-->
-                <div class="text-gray-900 text-2xl">
-                    <strong>{ nameCategory }</strong>
+                <div class="text-gray-800 text-2xl">
+                    <strong>{ nameCategory }:</strong>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
 
                     {#each category as {id, slug, name, product}}
                     <a sveltekit:prefetch href='/products/{slug}/?id={id}'
-                              class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                              class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 hover:shadow-md hover:shadow-indigo-600/50 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <!-- Heroicon name: outline/folder -->
                         <!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
                         <!--                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
@@ -69,7 +69,7 @@
 
                         { name }
 
-                        <span class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full">
+                        <span class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-2 text-xs font-medium rounded-full">
                           { product.length }
                         </span>
                     </a>
@@ -84,7 +84,7 @@
 
 
             <!-- This example requires Tailwind CSS v2.0+ -->
-            <div class="py-1 relative shadow-lg rounded-lg border-2">
+            <div class="py-1 bg-gray-50 relative shadow-lg shadow-indigo-700/50 rounded-lg">
                 <!--          <div class="py-1 relative bg-gradient-to-b from-gray-50 via-gray-800 to-gray-50 shadow-lg rounded-lg">-->
                 <div class="max-w-full mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     {#if text}
@@ -117,24 +117,24 @@
                 <div class="mt-8 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
 
                     {#each category as {id, name, slug, text}}
-                    <div class=" flex flex-col rounded-lg shadow-xl shadow-indigo-700/50 overflow-hidden">
+                    <div class=" flex flex-col rounded-lg shadow-lg shadow-indigo-700/50 overflow-hidden">
                         <!--            <div class="flex-shrink-0">-->
                         <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
                         <!--            </div>-->
-                        <div class="flex-1 bg-indigo-700 p-6 flex flex-col justify-between">
+                        <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                             <div class="flex-1">
                                 <a sveltekit:prefetch href='/products/{slug}/?id={id}'>
-                                    <p class="text-xl font-semibold text-gray-50">
+                                    <p class="text-xl font-semibold text-gray-800">
                                         { name }
                                     </p>
                                     {#if (text)}
-                                    <p class="mt-3 text-base text-gray-50">
+                                    <p class="mt-3 text-base text-gray-800">
                                         { text.descriptionText }
                                     </p>
-                                        {:else }
-                                        <p class="mt-3 text-base text-gray-50">текст</p>
-                                        {/if}
-                                        <p class="mt-2 text-base font-medium text-red-500 place-items-end">Выбрать &rarr;</p>
+                                    {:else }
+                                    <p class="mt-3 text-base text-gray-50">Уточняйте наличие</p>
+                                    {/if}
+                                    <p class="mt-2 text-base font-medium text-red-600 place-items-end">Выбрать &rarr;</p>
                                 </a>
                             </div>
                             <!--              <div class="mt-6 flex items-center">-->
