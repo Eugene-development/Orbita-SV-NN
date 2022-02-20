@@ -3,9 +3,8 @@
     export const load = async ({fetch, params, url}) => {
         const idHead = url.searchParams.get('id');
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
-        const rubrics = await res.json();
-        const data = rubrics.rubrics.data[0]
-        // console.log(data)
+        const resJSON = await res.json();
+        const data = resJSON.rubrics.data[0]
         const nameRubric = data.name
         const rubric = data.rubric
         const text = data.text

@@ -3,16 +3,15 @@
     export const load = async ({fetch, url}) => {
         const idCategory = url.searchParams.get('id');
         const res = await fetch(`/api/catalog/products/${idCategory}`)
-        const products = await res.json();
-        const data = products.products.data[0]
-        console.log(data)
+        const resJSON = await res.json();
+        const data = resJSON.products.data[0]
         const nameCategory = data.name
-        const product = data.product
+        const products = data.product
         // const text = data.text
         return {
             props: {
                 nameCategory,
-                product
+                products
             }
         }
     }
@@ -20,7 +19,7 @@
 
 <script>
     export let nameCategory
-    export let product
+    export let products
 </script>
 
 <div class="bg-blueGray-50">
@@ -34,7 +33,7 @@
         <!--    <p>{{$route.params.slug}}</p>-->
         <!-- This example requires Tailwind CSS v2.0+ -->
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {#each product as {id, name, slug, size, unit}}
+            {#each products as {id, name, slug, size, unit}}
             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-500/50 divide-y divide-gray-200">
                 <a sveltekit:prefetch href='/product/{slug}/?id={id}'>
                     <div class="flex-1 flex flex-col p-8">
