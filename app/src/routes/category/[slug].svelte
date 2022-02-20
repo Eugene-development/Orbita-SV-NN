@@ -5,7 +5,6 @@
         const res = await fetch(`/api/catalog/categories/${idRubric}`)
         const categories = await res.json();
         const data = categories.categories.data[0]
-        console.log(data)
         const nameCategory = data.name
         const category = data.category
         const text = data.text
