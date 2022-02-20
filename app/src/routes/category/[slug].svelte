@@ -169,10 +169,7 @@
             </div>
         </div>
     </div>
-
-
 </div>
-
 
 <div class="relative my-8 py-8 bg-white overflow-hidden">
     <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">

@@ -34,9 +34,9 @@
         <!--    <p>{{$route.params.slug}}</p>-->
         <!-- This example requires Tailwind CSS v2.0+ -->
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {#each product as {name, size, unit}}
+            {#each product as {id, name, slug, size, unit}}
             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-500/50 divide-y divide-gray-200">
-                <a href="'/product/' + product.slug">
+                <a sveltekit:prefetch href='/product/{slug}/?id={id}'>
                     <div class="flex-1 flex flex-col p-8">
 <!--                        <img-->
 <!--                                v-for="(image, idx) of product.image" :key="image.id"-->
