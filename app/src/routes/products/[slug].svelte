@@ -47,7 +47,7 @@
                         <dl class="mt-1 flex-grow flex flex-col justify-between">
                             <dt class="sr-only">Title</dt>
                             <hr class="mt-4">
-                            <!--                          <dd class="text-gray-500 text-sm">цена</dd>-->
+<!--                                                      <dd class="text-gray-500 text-sm">цена</dd>-->
                             <dt class="sr-only">Product</dt>
                             <dd class="mt-3">
                                 <span class="px-2 py-1 text-indigo-800 text-base font-medium bg-indigo-100 rounded-full">{ size[0].price.price } р/{ unit }</span>
@@ -85,8 +85,7 @@
                         </div>
                         <div  class="-ml-px w-0 flex-1 flex">
 <!--                        <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
-                            <a href="'/product/' + product.id"
-                                    class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
+                            <a sveltekit:prefetch href='/product/{slug}/?id={id}' class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
                                 <!-- Heroicon name: solid/mail -->
                                 <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">
