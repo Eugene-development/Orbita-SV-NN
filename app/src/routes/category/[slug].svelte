@@ -123,7 +123,7 @@
                         <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                             <div class="flex-1">
                                 <a sveltekit:prefetch href='/products/{slug}/?id={id}'>
-                                    <p class="text-xl font-semibold text-gray-800">
+                                    <p class="text-2xl font-semibold text-gray-800">
                                         { name }
                                     </p>
                                     {#if (text)}
