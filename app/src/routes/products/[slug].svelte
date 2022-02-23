@@ -42,7 +42,7 @@
 <!--                                src="`${pathAWS}${image.filename}`"-->
 <!--                                alt="product"-->
 <!--                                class="w-32 h-32 object-contain flex-shrink-0 mx-auto">-->
-                        <h3 class="mt-6 text-gray-900 text-sm font-medium">{ name }</h3>
+                        <h3 class="mt-6 text-gray-900 text-xs font-medium">{ name }</h3>
                         <dl class="mt-1 flex-grow flex flex-col justify-between">
                             <dt class="sr-only">Title</dt>
                             <hr class="mt-4">
