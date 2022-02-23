@@ -7,5 +7,6 @@ export const get = async ({ params }) => {
     }
     const res = await fetch(url, { headers });
     const products = await res.json();
-    return { body: { products } }
+    const pathAWS = import.meta.env.VITE_IMAGE_PRODUCTS
+    return { body: { products, pathAWS } }
 }

@@ -7,11 +7,13 @@
         const data = resJSON.products.data[0]
         const nameCategory = data.name
         const products = data.product
-        // const text = data.text
+        console.log(products)
+        const pathAWS = resJSON.pathAWS
         return {
             props: {
                 nameCategory,
-                products
+                products,
+                pathAWS
             }
         }
     }
@@ -20,8 +22,10 @@
 <script>
     export let nameCategory
     export let products
+    export let pathAWS
 </script>
 
+{pathAWS}
 <div class="bg-blueGray-50">
     <div class="p-8 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white to-indigo-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
@@ -33,15 +37,14 @@
         <!--    <p>{{$route.params.slug}}</p>-->
         <!-- This example requires Tailwind CSS v2.0+ -->
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {#each products as {id, name, slug, size, unit}}
-            <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-500/50 divide-y divide-gray-200">
+            {#each products as {id, name, slug, size, unit, image}}
+            <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-gray-200">
                 <a sveltekit:prefetch href='/product/{slug}/?id={id}'>
                     <div class="flex-1 flex flex-col p-8">
-<!--                        <img-->
-<!--                                v-for="(image, idx) of product.image" :key="image.id"-->
-<!--                                src="`${pathAWS}${image.filename}`"-->
-<!--                                alt="product"-->
-<!--                                class="w-32 h-32 object-contain flex-shrink-0 mx-auto">-->
+                        <img
+                                src="{pathAWS}{image[0].filename}"
+                                alt="product"
+                                class="w-32 h-32 object-contain flex-shrink-0 mx-auto">
                         <h3 class="mt-6 text-gray-900 text-xs font-medium">{ name }</h3>
                         <dl class="mt-1 flex-grow flex flex-col justify-between">
                             <dt class="sr-only">Title</dt>
