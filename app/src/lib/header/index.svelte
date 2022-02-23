@@ -23,7 +23,7 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="relative bg-gradient-to-tr from-indigo-500 via-indigo-600 to-indigo-500">
         <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-            <div class="pr-16  sm:text-center sm:px-16">
+            <div class="pr-16 sm:text-left">
                 <div class="font-medium text-white text-base">
                     <span class="md:hidden"><strong>8 (800) 555-8-111</strong> (звонок бесплатный)<br> 8 (930) 688-88-62<br> 8 (902) 303-36-54</span>
                     <span class="hidden md:inline"><strong>8 (800) 555-8-111</strong> (звонок бесплатный) - 8 (930) 688-88-62 - 8 (902) 303-36-54</span>
@@ -43,7 +43,7 @@
                 <div>
                     <a href="/" class="flex">
                         <span class="sr-only">Logo</span>
-                        <img class="h-12 w-auto sm:h-12" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
+                        <img class="h-10 w-auto sm:h-10" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
