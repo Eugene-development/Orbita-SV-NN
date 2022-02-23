@@ -7,7 +7,6 @@
         const data = resJSON.products.data[0]
         const nameCategory = data.name
         const products = data.product
-        console.log(products)
         const pathAWS = resJSON.pathAWS
         return {
             props: {
@@ -25,7 +24,6 @@
     export let pathAWS
 </script>
 
-{pathAWS}
 <div class="bg-blueGray-50">
     <div class="p-8 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white to-indigo-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
