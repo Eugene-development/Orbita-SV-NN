@@ -56,7 +56,7 @@
 
                     {#each category as {id, slug, name, product}}
                     <a sveltekit:prefetch href='/products/{slug}/?id={id}'
-                              class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 hover:shadow-md hover:shadow-indigo-500/50 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                              class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 hover:shadow-md hover:shadow-indigo-100/50 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <!-- Heroicon name: outline/folder -->
                         <!--                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"-->
                         <!--                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
@@ -83,7 +83,7 @@
 
 
             <!-- This example requires Tailwind CSS v2.0+ -->
-            <div class="py-1 bg-gray-50 relative shadow-lg shadow-indigo-500/50 rounded-lg">
+            <div class="py-1 bg-gray-50 relative shadow-lg shadow-indigo-100/50 rounded-lg">
                 <!--          <div class="py-1 relative bg-gradient-to-b from-gray-50 via-gray-800 to-gray-50 shadow-lg rounded-lg">-->
                 <div class="max-w-full mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     {#if text}
@@ -116,7 +116,7 @@
                 <div class="mt-8 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
 
                     {#each category as {id, name, slug, text}}
-                    <div class=" flex flex-col rounded-lg shadow-lg shadow-indigo-500/50 overflow-hidden">
+                    <div class=" flex flex-col rounded-lg shadow-lg shadow-indigo-100/50 overflow-hidden">
                         <!--            <div class="flex-shrink-0">-->
                         <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
                         <!--            </div>-->
