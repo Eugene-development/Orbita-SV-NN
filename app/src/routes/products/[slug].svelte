@@ -48,7 +48,7 @@
                             <hr class="mt-4">
 <!--                                                      <dd class="text-gray-500 text-sm">цена</dd>-->
                             <dt class="sr-only">Product</dt>
-                            <dd class="mt-3">
+                            <dd class="mt-4">
                                 <span class="px-2 py-1 text-indigo-800 text-base font-medium bg-indigo-100 rounded-full">{ size[0].price.price } р/{ unit }</span>
                             </dd>
                         </dl>
