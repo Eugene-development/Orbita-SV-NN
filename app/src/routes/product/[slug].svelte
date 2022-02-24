@@ -1,5 +1,4 @@
 <script context="module">
-
     export const load = async ({fetch, url}) => {
         const idProduct = url.searchParams.get('id');
         const res = await fetch(`/api/catalog/product/${idProduct}`)
@@ -100,12 +99,13 @@
                         <div class="flex">
                             <span class="title-font font-medium text-4xl text-gray-900">{ size[0].price.price } р/{ unit }.</span>
 <!--                            <button-->
-<!--                                    v-if="!productsInCart.some(arrVal => product.id === arrVal)"-->
-<!--                                    @click.prevent.once="sendToCart (product.id)"-->
-<!--                                    class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
-<!--                                    wfd-id="157">В корзину-->
+
+<!--                                    class="flex ml-auto text-white bg-indigo-50 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
+<!--                                    >В корзину-->
 <!--                            </button>-->
-<!--                            <button v-else-->
+                            <button type="button" class="ml-auto bg-indigo-50 border border-transparent rounded-md py-2 px-6 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">В корзину</button>
+
+                            <!--                            <button v-else-->
 <!--                                    class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
 <!--                                    wfd-id="157">В корзине-->
 <!--                            </button>-->
