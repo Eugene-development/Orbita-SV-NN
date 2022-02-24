@@ -8,15 +8,19 @@
 
         console.log(data)
         const nameProduct = data.name
+        const idCategory = data.category.id
+        const nameCategory = data.category.name
+        const slugCategory = data.category.slug
         const pathAWS = resJSON.pathAWS
         const image = data.image
         const unit = data.unit
         const size = data.size
-        // const product = data.product
-        // const text = data.text
         return {
             props: {
                 nameProduct,
+                idCategory,
+                slugCategory,
+                nameCategory,
                 pathAWS,
                 image,
                 unit,
@@ -28,6 +32,9 @@
 
 <script>
     export let nameProduct
+    export let idCategory
+    export let slugCategory
+    export let nameCategory
     export let pathAWS
     export let image
     export let unit
@@ -77,16 +84,12 @@
 <!--                            <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 450 рублей до 1500 кг, в Нижний Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у менеджеров.</p>-->
 
 
-<!--                        <NuxtLink v-for="(category, idx) of category" :key="category.id"-->
-<!--                                  :to="'/products/' + category.slug">-->
-<!--                            <div-->
-<!--                                    class="flex border-t border-gray-200 py-2">-->
-<!--                                <span class="text-gray-500">Категория</span>-->
-<!--                                <span class="ml-auto text-gray-900">-->
-<!--                  {{ category.name }}-->
-<!--                </span>-->
-<!--                            </div>-->
-<!--                        </NuxtLink>-->
+                        <a href='/products/{slugCategory}/?id={idCategory}'>
+                            <div class="flex border-t border-gray-200 py-2">
+                                <span class="text-gray-500">Категория</span>
+                                <span class="ml-auto text-gray-900">{ nameCategory }</span>
+                            </div>
+                        </a>
 
                         <div class="flex border-t border-gray-200 py-2">
                             <span class="text-gray-500">Единица измерения</span>
