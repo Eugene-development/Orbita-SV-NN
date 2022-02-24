@@ -5,12 +5,22 @@
         const res = await fetch(`/api/catalog/product/${idProduct}`)
         const resJSON = await res.json();
         const data = resJSON.product.data[0]
+
+        console.log(data)
         const nameProduct = data.name
+        const pathAWS = resJSON.pathAWS
+        const image = data.image
+        const unit = data.unit
+        const size = data.size
         // const product = data.product
         // const text = data.text
         return {
             props: {
                 nameProduct,
+                pathAWS,
+                image,
+                unit,
+                size
             }
         }
     }
@@ -18,6 +28,10 @@
 
 <script>
     export let nameProduct
+    export let pathAWS
+    export let image
+    export let unit
+    export let size
 </script>
 
 <div>
@@ -28,13 +42,13 @@
             </div>
         </div>
 
-<!--        <section class="text-gray-600 body-font overflow-hidden">-->
-<!--            <div class="container px-5 py-24 mx-auto">-->
-<!--                <div class="lg:w-4/5 mx-auto flex flex-wrap">-->
-<!--                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">-->
-<!--                        <h2 class="text-sm title-font text-gray-500 tracking-widest">НАИМЕНОВАНИЕ</h2>-->
-<!--                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{ product.name }}</h1>-->
-<!--                        <div class="flex mb-4">-->
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                        <h2 class="text-sm title-font text-gray-500 tracking-widest">НАИМЕНОВАНИЕ</h2>
+                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{ nameProduct }</h1>
+                        <div class="flex mb-4">
 <!--                            <button-->
 <!--                                    @click="changeVisibleDescription"-->
 <!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
@@ -50,7 +64,7 @@
 <!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
 <!--                                    :class="{ 'text-indigo-900 border-indigo-900': visibleDelivery }"-->
 <!--                            >Доставка</button>-->
-<!--                        </div>-->
+                        </div>
 
 
 <!--                        <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="product.description"></p>-->
@@ -74,16 +88,16 @@
 <!--                            </div>-->
 <!--                        </NuxtLink>-->
 
-<!--                        <div class="flex border-t border-gray-200 py-2">-->
-<!--                            <span class="text-gray-500">Единица измерения</span>-->
-<!--                            <span class="ml-auto text-gray-900">{{ product.unit }}</span>-->
-<!--                        </div>-->
-<!--                        <div class="flex border-t border-b mb-6 border-gray-200 py-2">-->
-<!--                            <span class="text-gray-500">Наличие на складе</span>-->
-<!--                            <span class="ml-auto text-gray-900">Уточняйте у менеджера</span>-->
-<!--                        </div>-->
-<!--                        <div class="flex">-->
-<!--                            <span class="title-font font-medium text-4xl text-gray-900">{{ product.size[0].price.price }} руб/{{ product.unit }}.</span>-->
+                        <div class="flex border-t border-gray-200 py-2">
+                            <span class="text-gray-500">Единица измерения</span>
+                            <span class="ml-auto text-gray-900">{ unit }</span>
+                        </div>
+                        <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                            <span class="text-gray-500">Наличие на складе</span>
+                            <span class="ml-auto text-gray-900">Уточняйте у менеджера</span>
+                        </div>
+                        <div class="flex">
+                            <span class="title-font font-medium text-4xl text-gray-900">{ size[0].price.price } р/{ unit }.</span>
 <!--                            <button-->
 <!--                                    v-if="!productsInCart.some(arrVal => product.id === arrVal)"-->
 <!--                                    @click.prevent.once="sendToCart (product.id)"-->
@@ -103,17 +117,17 @@
 <!--                                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>-->
 <!--                                </svg>-->
 <!--                            </button>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                        </div>
+                    </div>
 
-<!--                    <img-->
-<!--                            v-for="(image, idx) of product.image" :key="image.id"-->
-<!--                            alt="ecommerce" class="lg:w-1/2 max-w-xl object-contain object-top rounded"-->
-<!--                            :src="`${pathAWS}${image.filename}`">-->
+                    <img
 
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+                            alt="ecommerce" class="lg:w-1/2 max-w-xl object-contain object-top rounded"
+                            src="{pathAWS}{image[0].filename}">
+
+                </div>
+            </div>
+        </section>
 
     </div>
 </div>
