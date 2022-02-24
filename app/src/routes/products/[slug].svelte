@@ -37,10 +37,9 @@
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {#each products as {id, name, slug, size, unit, image}}
             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-gray-200">
-                <a sveltekit:prefetch href='/product/{slug}/?id={id}'>
+                <a sveltekit:prefetch sveltekit:noscroll href='/product/{slug}/?id={id}'>
                     <div class="flex-1 flex flex-col p-8">
-                        <img
-                                src="{pathAWS}{image[0].filename}"
+                        <img src="{pathAWS}{image[0].filename}"
                                 alt="product"
                                 class="w-32 h-32 object-contain flex-shrink-0 mx-auto">
                         <h3 class="mt-6 text-gray-900 text-xs font-medium">{ name }</h3>
@@ -85,7 +84,7 @@
                         </div>
                         <div  class="-ml-px w-0 flex-1 flex">
 <!--                        <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
-                            <a sveltekit:prefetch href='/product/{slug}/?id={id}' class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
+                            <a sveltekit:prefetch sveltekit:noscroll href='/product/{slug}/?id={id}' class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
                                 <!-- Heroicon name: solid/mail -->
                                 <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">
