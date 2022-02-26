@@ -163,7 +163,7 @@
                         </div>
                     </div>
 
-                    <img alt="ecommerce" class="lg:w-1/2 max-w-xl object-contain object-top rounded shadow-lg shadow-indigo-200/50" src="{pathAWS}{image[0].filename}">
+                    <img alt="ecommerce" class="lg:w-1/2 p-8 max-w-xl object-contain object-center rounded shadow-lg shadow-indigo-200/50" src="{pathAWS}{image[0].filename}">
 
                 </div>
             </div>
