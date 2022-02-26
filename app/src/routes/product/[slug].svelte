@@ -87,21 +87,6 @@
                         <h2 class="text-sm title-font text-gray-500 tracking-widest">НАИМЕНОВАНИЕ</h2>
                         <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{ nameProduct }</h1>
                         <div class="flex mb-4">
-<!--                            <button-->
-<!--                                    @click="changeVisibleDescription"-->
-<!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
-<!--                                    :class="{ 'text-indigo-900 border-indigo-900': visibleDescription }"-->
-<!--                            >Описание</button>-->
-<!--                            <button-->
-<!--                                    @click="changeVisiblePayment"-->
-<!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
-<!--                                    :class="{ 'text-indigo-900 border-indigo-900': visiblePayment }"-->
-<!--                            >Оплата</button>-->
-<!--                            <button-->
-<!--                                    @click="changeVisibleDelivery"-->
-<!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
-<!--                                    :class="{ 'text-indigo-900 border-indigo-900': visibleDelivery }"-->
-<!--                            >Доставка</button>-->
                             <button on:click={changeVisibleDescriptionInfo}
                                     class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                             >Описание</button>
