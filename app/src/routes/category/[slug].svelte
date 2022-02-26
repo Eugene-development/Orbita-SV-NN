@@ -26,7 +26,6 @@
 
 
 
-
 <div >
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
         <div class="flex flex-col text-center w-full">
