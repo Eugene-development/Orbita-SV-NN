@@ -68,7 +68,18 @@
     export let image
     export let unit
     export let size
-</script>
+
+
+    import { writable } from 'svelte/store';
+
+    const count = writable(0);
+    console.log($count); // выведет 0
+
+    count.set(1);
+    console.log($count); // выведет 1
+
+    $count = 2;
+    console.log($count); // выведет 2</script>
 
 <!--{@debug visibleDescription}-->
 
@@ -88,19 +99,19 @@
                         <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{ nameProduct }</h1>
                         <div class="flex mb-4">
                             <button on:click={changeVisibleDescriptionInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visibleDescription ? 'font-bold' : 'font-normal'}"
                             >Описание</button>
                             <button on:click={changeVisiblePaymentInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visiblePayment ? 'font-bold' : 'font-normal'}"
                             >Оплата</button>
                             <button on:click={changeVisibleDeliveryInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visibleDelivery ? 'font-bold' : 'font-normal'}"
                             >Доставка</button>
                         </div>
 
 
                         {#if visibleDescription}
-                        <p class="leading-relaxed mb-4" >{@html descriptionProduct}</p>
+                        <p class="leading-relaxed mb-4 ">{@html descriptionProduct}</p>
                         {:else if visiblePayment}
                         <p class="leading-relaxed mb-4">
                             Предлагаем следующие варианты оплаты: <br>
