@@ -43,20 +43,23 @@
     export let size
 
 
-    const {invert} = useVisible;
+    const {invert, invertToTrue} = useVisible;
 
 
     import { descriptionInfo, paymentInfo, deliveryInfo } from "../../stores.js";
 
-    const changeVisibleDescriptionInfo = () => descriptionInfo.update(invert)
+    const changeVisibleDescriptionInfo = () => {
+      descriptionInfo.update(invertToTrue)
+
+    }
     let visibleDescription;
     descriptionInfo.subscribe(value => visibleDescription = value);
 
-    const changeVisiblePaymentInfo = () => paymentInfo.update(invert)
+    const changeVisiblePaymentInfo = () => paymentInfo.update(invertToTrue)
     let visiblePayment;
     paymentInfo.subscribe(value => visiblePayment = value);
 
-    const changeVisibleDeliveryInfo = () => deliveryInfo.update(invert)
+    const changeVisibleDeliveryInfo = () => deliveryInfo.update(invertToTrue)
     let visibleDelivery;
     deliveryInfo.subscribe(value => visibleDelivery = value);
 
@@ -64,7 +67,7 @@
 
 </script>
 
-<!--{@debug visibleDescription}-->
+<!--{@debug visiblePayment}-->
 
 <div>
     <div>
