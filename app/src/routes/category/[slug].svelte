@@ -5,12 +5,12 @@
         const res = await fetch(`/api/catalog/categories/${idRubric}`)
         const resJSON = await res.json();
         const data = resJSON.categories.data[0]
-        const nameCategory = data.name
+        const nameRubric = data.name
         const category = data.category
         const text = data.text
         return {
             props: {
-                nameCategory,
+                nameRubric,
                 category,
                 text
             }
@@ -19,7 +19,7 @@
 </script>
 
 <script>
-    export let nameCategory
+    export let nameRubric
     export let category
     export let text
 </script>
@@ -28,9 +28,9 @@
 
 
 <div >
-    <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-100 to-white shadow-lg mb-4">
+    <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
         <div class="flex flex-col text-center w-full">
-            <h1 class=" text-5xl font-medium title-font text-gray-900">{ nameCategory } в Нижнем Новгороде</h1>
+            <h1 class=" text-5xl font-medium title-font text-gray-900">{ nameRubric } в Нижнем Новгороде</h1>
         </div>
     </div>
 
@@ -45,7 +45,7 @@
                 <!--              stroke-width="2"/>-->
                 <!--          </svg>-->
                 <div class="text-gray-800 text-2xl">
-                    <strong>{ nameCategory }:</strong>
+                    <strong>{ nameRubric }:</strong>
                 </div>
             </div>
 
