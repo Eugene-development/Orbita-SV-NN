@@ -30,6 +30,8 @@
 </script>
 
 <script>
+    import { useVisible } from "$lib/use/functions/visible";
+
     export let nameProduct
     export let descriptionProduct
     export let idCategory
@@ -40,12 +42,29 @@
     export let unit
     export let size
 
-    let visibleDescription = false
-    let visiblePayment = true
-    let visibleDelivery = false
+
+    const {invert} = useVisible;
+
+
+    import { descriptionInfo, paymentInfo, deliveryInfo } from "../../stores.js";
+
+    const changeVisibleDescriptionInfo = () => descriptionInfo.update(invert)
+    let visibleDescription;
+    descriptionInfo.subscribe(value => visibleDescription = value);
+
+    const changeVisiblePaymentInfo = () => paymentInfo.update(invert)
+    let visiblePayment;
+    paymentInfo.subscribe(value => visiblePayment = value);
+
+    const changeVisibleDeliveryInfo = () => deliveryInfo.update(invert)
+    let visibleDelivery;
+    deliveryInfo.subscribe(value => visibleDelivery = value);
+
+
+
 </script>
 
-<!--{@debug descriptionProduct}-->
+<!--{@debug visibleDescription}-->
 
 <div>
     <div>
@@ -77,13 +96,13 @@
 <!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
 <!--                                    :class="{ 'text-indigo-900 border-indigo-900': visibleDelivery }"-->
 <!--                            >Доставка</button>-->
-                            <button
+                            <button on:click={changeVisibleDescriptionInfo}
                                     class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                             >Описание</button>
-                            <button
+                            <button on:click={changeVisiblePaymentInfo}
                                     class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                             >Оплата</button>
-                            <button
+                            <button on:click={changeVisibleDeliveryInfo}
                                     class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
                             >Доставка</button>
                         </div>
