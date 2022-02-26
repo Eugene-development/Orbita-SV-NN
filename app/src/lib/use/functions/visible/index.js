@@ -1,8 +1,9 @@
 const invert = param => !param
-
-const invertToTrue = param => true
+const invertToTrue = () => true
+const invertToFalse = () => false
 
 export const useVisible = {
     invert,
-    invertToTrue
+    invertToTrue,
+    invertToFalse
 }

@@ -31,6 +31,33 @@
 
 <script>
     import { useVisible } from "$lib/use/functions/visible";
+    import { descriptionInfo, paymentInfo, deliveryInfo } from "../../stores.js";
+
+    const { invertToTrue, invertToFalse } = useVisible;
+
+    const changeVisibleDescriptionInfo = () => {
+      descriptionInfo.update(invertToTrue)
+      paymentInfo.update(invertToFalse)
+      deliveryInfo.update(invertToFalse)
+    }
+    let visibleDescription;
+    descriptionInfo.subscribe(value => visibleDescription = value);
+
+    const changeVisiblePaymentInfo = () => {
+      descriptionInfo.update(invertToFalse)
+      paymentInfo.update(invertToTrue)
+      deliveryInfo.update(invertToFalse)
+    }
+    let visiblePayment;
+    paymentInfo.subscribe(value => visiblePayment = value);
+
+    const changeVisibleDeliveryInfo = () => {
+      descriptionInfo.update(invertToFalse)
+      paymentInfo.update(invertToFalse)
+      deliveryInfo.update(invertToTrue)
+    }
+    let visibleDelivery;
+    deliveryInfo.subscribe(value => visibleDelivery = value);
 
     export let nameProduct
     export let descriptionProduct
@@ -41,33 +68,9 @@
     export let image
     export let unit
     export let size
-
-
-    const {invert, invertToTrue} = useVisible;
-
-
-    import { descriptionInfo, paymentInfo, deliveryInfo } from "../../stores.js";
-
-    const changeVisibleDescriptionInfo = () => {
-      descriptionInfo.update(invertToTrue)
-
-    }
-    let visibleDescription;
-    descriptionInfo.subscribe(value => visibleDescription = value);
-
-    const changeVisiblePaymentInfo = () => paymentInfo.update(invertToTrue)
-    let visiblePayment;
-    paymentInfo.subscribe(value => visiblePayment = value);
-
-    const changeVisibleDeliveryInfo = () => deliveryInfo.update(invertToTrue)
-    let visibleDelivery;
-    deliveryInfo.subscribe(value => visibleDelivery = value);
-
-
-
 </script>
 
-<!--{@debug visiblePayment}-->
+<!--{@debug visibleDescription}-->
 
 <div>
     <div>
