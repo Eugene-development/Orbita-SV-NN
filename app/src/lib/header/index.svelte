@@ -1,9 +1,9 @@
 <script>
-    import {clickOutside} from "$lib/use/click_outside.js";
+    import {clickOutside} from "$lib/use/functions/click_outside";
 
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "$lib/use/content/header";
-    import {useVisible} from "$lib/use/visible";
+    import {useVisible} from "$lib/use/functions/visible";
     import {informationMenu} from '../../stores.js';
 
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
