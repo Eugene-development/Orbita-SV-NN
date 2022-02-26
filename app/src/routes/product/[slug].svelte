@@ -5,6 +5,7 @@
         const resJSON = await res.json();
         const data = resJSON.product.data[0]
         const nameProduct = data.name
+        const descriptionProduct = data.description
         const idCategory = data.category.id
         const nameCategory = data.category.name
         const slugCategory = data.category.slug
@@ -15,6 +16,7 @@
         return {
             props: {
                 nameProduct,
+                descriptionProduct,
                 idCategory,
                 slugCategory,
                 nameCategory,
@@ -29,6 +31,7 @@
 
 <script>
     export let nameProduct
+    export let descriptionProduct
     export let idCategory
     export let slugCategory
     export let nameCategory
@@ -36,7 +39,13 @@
     export let image
     export let unit
     export let size
+
+    let visibleDescription = false
+    let visiblePayment = true
+    let visibleDelivery = false
 </script>
+
+<!--{@debug descriptionProduct}-->
 
 <div>
     <div>
@@ -71,15 +80,18 @@
                         </div>
 
 
-<!--                        <p v-show="visibleDescription" class="leading-relaxed mb-4" v-html="product.description"></p>-->
-<!--                        <p v-show="visiblePayment" class="leading-relaxed mb-4">-->
-<!--                            Предлагаем следующие варианты оплаты: <br>-->
-<!--                            - наличными курьеру при получении товара;<br>-->
-<!--                            - картой через терминал, либо наличными в нашем офисе;<br>-->
-<!--                            - безналичный расчет (через банк для юридических лиц). Мы отправим счёт на оплату с нашими реквизитами на указанный вами электронный адрес. Доставка (самовывоз) товара осуществляется после получения денежных средств на наш расчётный счёт.</p>-->
-<!--                        <p v-show="visibleDelivery" class="leading-relaxed mb-4" >Для удобства мы предлагаем доставку товара на адрес объекта.-->
-<!--                            <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 450 рублей до 1500 кг, в Нижний Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у менеджеров.</p>-->
-
+                        {#if visibleDescription}
+                        <p class="leading-relaxed mb-4" >{@html descriptionProduct}</p>
+                        {:else if visiblePayment}
+                        <p class="leading-relaxed mb-4">
+                            Предлагаем следующие варианты оплаты: <br>
+                            - наличными курьеру при получении товара;<br>
+                            - картой через терминал, либо наличными в нашем офисе;<br>
+                            - безналичный расчет (через банк для юридических лиц). Мы отправим счёт на оплату с нашими реквизитами на указанный вами электронный адрес. Доставка (самовывоз) товара осуществляется после получения денежных средств на наш расчётный счёт.</p>
+                        {:else if visibleDelivery}
+                        <p class="leading-relaxed mb-4" >Для удобства мы предлагаем доставку товара на адрес объекта.
+                            <br>Наша компания осуществляет доставку строительных и отделочных материалов как по Дзержинску, так и по Нижнему Новгороду и области. Стоимость доставки по Дзержинску составляет 450 рублей до 1500 кг, в Нижний Новгород от 1200 рублей. Более подробную информацию о стоимости за пределы города вы можете уточнить у менеджеров.</p>
+                        {/if}
 
                         <a sveltekit:prefetch sveltekit:noscroll href='/products/{slugCategory}/?id={idCategory}'>
                             <div class="flex border-t border-gray-200 py-2">
