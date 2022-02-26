@@ -77,6 +77,15 @@
 <!--                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"-->
 <!--                                    :class="{ 'text-indigo-900 border-indigo-900': visibleDelivery }"-->
 <!--                            >Доставка</button>-->
+                            <button
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                            >Описание</button>
+                            <button
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                            >Оплата</button>
+                            <button
+                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
+                            >Доставка</button>
                         </div>
 
 
