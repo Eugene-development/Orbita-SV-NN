@@ -5,11 +5,17 @@
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const resJSON = await res.json();
         const data = resJSON.rubrics.data[0]
+        // console.log(data)
         const nameRubric = data.name
         const rubric = data.rubric
         const text = data.text
+
+        const title = nameRubric + ' || База стройматериалов Орбита-Строй в Нижнем Новгороде'
+        const description = nameRubric + ' в Нижнем Новгороде и области.'
         return {
             props: {
+                title,
+                description,
                 nameRubric,
                 rubric,
                 text
@@ -19,10 +25,20 @@
 </script>
 
 <script>
+    export let title
+    export let description
     export let nameRubric
     export let rubric
     export let text
 </script>
+
+
+
+<svelte:head>
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+</svelte:head>
+
 
 <div class="bg-white">
     <div class="pt-4 sm:pt-8 lg:pt-12">

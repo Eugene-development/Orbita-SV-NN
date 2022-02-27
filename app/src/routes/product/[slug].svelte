@@ -70,16 +70,7 @@
     export let size
 
 
-    import { writable } from 'svelte/store';
-
-    const count = writable(0);
-    console.log($count); // выведет 0
-
-    count.set(1);
-    console.log($count); // выведет 1
-
-    $count = 2;
-    console.log($count); // выведет 2</script>
+</script>
 
 <!--{@debug visibleDescription}-->
 
