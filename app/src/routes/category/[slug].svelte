@@ -5,12 +5,15 @@
         const res = await fetch(`/api/catalog/categories/${idRubric}`)
         const resJSON = await res.json();
         const data = resJSON.categories.data[0]
-        console.log(data)
         const nameRubric = data.name
         const category = data.category
         const text = data.text
+        const title = 'Стройматериалы' + ' || ' + nameRubric + ' в Нижнем Новгороде'
+        const description = nameRubric + ' в Нижнем Новгороде и области. '
         return {
             props: {
+                title,
+                description,
                 nameRubric,
                 category,
                 text
@@ -20,11 +23,17 @@
 </script>
 
 <script>
+    export let title
+    export let description
     export let nameRubric
     export let category
     export let text
 </script>
 
+<svelte:head>
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+</svelte:head>
 
 
 <div >

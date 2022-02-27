@@ -5,16 +5,16 @@
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const resJSON = await res.json();
         const data = resJSON.rubrics.data[0]
-        const nameRubric = data.name
+        const nameHead = data.name
         const rubric = data.rubric
         const text = data.text
-        const title = nameRubric + ' || База стройматериалов Орбита-Строй в Нижнем Новгороде'
-        const description = nameRubric + ' в Нижнем Новгороде и области. Предлагаем доставку и скидки.'
+        const title = nameHead + ' || База стройматериалов Орбита-Строй в Нижнем Новгороде'
+        const description = nameHead + ' в Нижнем Новгороде и области. Предлагаем доставку и скидки.'
         return {
             props: {
                 title,
                 description,
-                nameRubric,
+                nameHead,
                 rubric,
                 text
             }
@@ -25,7 +25,7 @@
 <script>
     export let title
     export let description
-    export let nameRubric
+    export let nameHead
     export let rubric
     export let text
 </script>
@@ -46,7 +46,7 @@
                 <!--              Раздел-->
                 <!--            </h2>-->
                 <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
-                    {nameRubric}
+                    {nameHead}
                 </h1>
                 <p class="text-xl text-gray-700">
                     Выберите интересующую вас рубрику в этом разделе.
@@ -63,11 +63,11 @@
 
                     {#each rubric as {id, slug, name}}
                         <div
-                         class="flex flex-col rounded-lg shadow-lg overflow-hidden border-2">
+                         class="flex flex-col rounded-lg shadow-lg shadow-indigo-200/50 overflow-hidden border-2">
                         <div class="px-6 py-8 text-center sm:p-10 sm:pb-6">
                             <div>
                                 <h3 class="inline-flex px-8 py-1 rounded-full text-sm  font-semibold tracking-wide uppercase bg-indigo-50 text-indigo-900" id="tier-standard">
-                                    { nameRubric }
+                                    { nameHead }
                                 </h3>
                             </div>
                             <div class="mt-4  text-center items-baseline text-2xl font-extrabold">
