@@ -5,13 +5,11 @@
         const res = await fetch(`/api/catalog/rubrics/${idHead}`)
         const resJSON = await res.json();
         const data = resJSON.rubrics.data[0]
-        // console.log(data)
         const nameRubric = data.name
         const rubric = data.rubric
         const text = data.text
-
         const title = nameRubric + ' || База стройматериалов Орбита-Строй в Нижнем Новгороде'
-        const description = nameRubric + ' в Нижнем Новгороде и области.'
+        const description = nameRubric + ' в Нижнем Новгороде и области. Предлагаем доставку и скидки.'
         return {
             props: {
                 title,
