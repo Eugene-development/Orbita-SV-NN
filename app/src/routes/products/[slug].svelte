@@ -5,11 +5,16 @@
         const res = await fetch(`/api/catalog/products/${idCategory}`)
         const resJSON = await res.json();
         const data = resJSON.products.data[0]
+        console.log(data)
         const nameCategory = data.name
         const products = data.product
         const pathAWS = resJSON.pathAWS
+        const title = data.seo.title
+        const description = data.seo.description
         return {
             props: {
+                title,
+                description,
                 nameCategory,
                 products,
                 pathAWS
@@ -19,10 +24,19 @@
 </script>
 
 <script>
+    export let title
+    export let description
     export let nameCategory
     export let products
     export let pathAWS
 </script>
+
+
+<svelte:head>
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+</svelte:head>
+
 
 <div class="bg-blueGray-50">
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
