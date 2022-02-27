@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Партнерство</title>
+    <meta name="description" content="Партнёрство с компанией 'Орбита строй'">
+</svelte:head>
+
+
 <div class="mx-auto  py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="space-y-5 mb-12 sm:space-y-4">
         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Партнёрская программа</h2>

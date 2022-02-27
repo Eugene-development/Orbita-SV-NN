@@ -3,6 +3,12 @@
     const {actions} = useActions
 </script>
 
+<svelte:head>
+    <title>Акции</title>
+    <meta name="description" content="Акции от компании 'Орбита строй'">
+</svelte:head>
+
+
 <div>
         <div class="mt-20 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="text-center">

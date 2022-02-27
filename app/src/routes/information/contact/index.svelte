@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Контакты</title>
+    <meta name="description" content="Контакты компании 'Орбита строй'">
+</svelte:head>
+
+
 <div class="bg-gray-100">
     <div class="w-full mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div class="relative bg-white shadow-xl">

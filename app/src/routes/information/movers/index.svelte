@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Грузчики</title>
+    <meta name="description" content="Грузчики компании 'Орбита строй'">
+</svelte:head>
+
+
 <div class="mt-12 relative text-base max-w-prose mx-auto lg:mt-0 lg:max-w-none">
     <blockquote class="relative bg-white rounded-lg shadow-lg">
         <div class="rounded-t-lg px-6 py-8 sm:px-10 sm:pt-10 sm:pb-8">

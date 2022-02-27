@@ -1,5 +1,5 @@
 <script>
-    import {clickOutside} from "$lib/use/functions/click_outside";
+    import {clickOutside} from "$lib/use/functions/click_outside/index.js";
 
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "$lib/use/content/header";
