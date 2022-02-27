@@ -5,7 +5,6 @@
         const res = await fetch(`/api/catalog/products/${idCategory}`)
         const resJSON = await res.json();
         const data = resJSON.products.data[0]
-        console.log(data)
         const nameCategory = data.name
         const products = data.product
         const pathAWS = resJSON.pathAWS

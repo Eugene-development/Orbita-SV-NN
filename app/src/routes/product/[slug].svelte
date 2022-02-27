@@ -13,8 +13,12 @@
         const image = data.image
         const unit = data.unit
         const size = data.size
+        const title = nameProduct + ' в Нижнем Новгороде || '
+        const description = nameProduct + ' в наличии в Нижнем Новгороде. '
         return {
             props: {
+                title,
+                description,
                 nameProduct,
                 descriptionProduct,
                 idCategory,
@@ -59,6 +63,8 @@
     let visibleDelivery;
     deliveryInfo.subscribe(value => visibleDelivery = value);
 
+    export let title
+    export let description
     export let nameProduct
     export let descriptionProduct
     export let idCategory
@@ -72,7 +78,10 @@
 
 </script>
 
-<!--{@debug visibleDescription}-->
+<svelte:head>
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+</svelte:head>
 
 <div>
     <div>
