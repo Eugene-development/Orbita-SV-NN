@@ -13,8 +13,12 @@
         const image = data.image
         const unit = data.unit
         const size = data.size
-        const title = nameProduct + ' в Нижнем Новгороде || '
-        const description = nameProduct + ' в наличии в Нижнем Новгороде. '
+
+        const seoTitle =  data.seo ? data.seo.title : 'Строительные и отделочные материалы'
+        const seoDescription = data.seo ? data.seo.description : "Строительные и отделочные материалы в Нижнем Новгороде"
+        const title = nameProduct + ' в Нижнем Новгороде || ' + seoTitle
+        const description = nameProduct + ' в наличии в Нижнем Новгороде. ' + seoDescription
+
         return {
             props: {
                 title,

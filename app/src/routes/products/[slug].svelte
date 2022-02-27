@@ -8,8 +8,13 @@
         const nameCategory = data.name
         const products = data.product
         const pathAWS = resJSON.pathAWS
-        const title = data.seo.title
-        const description = data.seo.description
+
+
+        const seoTitle =  data.seo ? data.seo.title : 'Скидки и акции'
+        const seoDescription = data.seo ? data.seo.description : "Продукция от компании 'Орбита-Строй'"
+        const title = 'Стройматериалы' + ' || ' + nameCategory + ' в Нижнем Новгороде || ' + seoTitle
+        const description = nameCategory + ' в Нижнем Новгороде и области. ' + seoDescription
+
         return {
             props: {
                 title,
@@ -45,8 +50,6 @@
     </div>
 
     <div class="p-8">
-        <!--    <p>{{$route.params.slug}}</p>-->
-        <!-- This example requires Tailwind CSS v2.0+ -->
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {#each products as {id, name, slug, size, unit, image}}
             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-gray-200">
@@ -59,7 +62,6 @@
                         <dl class="mt-1 flex-grow flex flex-col justify-between">
                             <dt class="sr-only">Title</dt>
                             <hr class="mt-4">
-<!--                                                      <dd class="text-gray-500 text-sm">цена</dd>-->
                             <dt class="sr-only">Product</dt>
                             <dd class="mt-4">
                                 <span class="px-2 py-1 text-indigo-800 text-base font-medium bg-indigo-100 rounded-full">{ size[0].price.price } р/{ unit }</span>
@@ -109,6 +111,5 @@
             </li>
             {/each}
         </ul>
-
     </div>
 </div>
