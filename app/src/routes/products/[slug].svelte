@@ -44,6 +44,8 @@
             const newItemsCart = concat(itemsCart, id)
             localStorage.setItem('inCart', JSON.stringify(newItemsCart));
             const productsInCart = JSON.parse(localStorage.getItem('inCart'));
+
+            const lengthCart = productsInCart.length
         }
     }
 

@@ -4,7 +4,7 @@
     import MobileMenu from "./mobile/index.svelte"
     import {useHead} from "$lib/use/content/header";
     import {useVisible} from "$lib/use/functions/visible";
-    import {informationMenu} from '../../stores.js';
+    import {informationMenu, lengthCart} from '../../stores.js';
 
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
     const {left: leftInfo, right: rightInfo} = information[0]
@@ -16,6 +16,10 @@
     informationMenu.subscribe(value => visibleInformationMenu = value);
 
     // const setId = (id) => localStorage.setItem('inCart', id);
+
+
+    let countLengthCart;
+    lengthCart.subscribe(value => countLengthCart = value)
 
 </script>
 
@@ -165,7 +169,7 @@
                         <a href="https://vk.com/orbita_stroy" target="_blank" class="text-lg font-medium text-gray-600 hover:text-gray-900"> VK </a>
                     </nav>
                     <div class="flex items-center md:ml-12">
-                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-700/50"> Корзина <div class="ml-1 animate-pulse"> (0)</div> </a>
+                        <a href="shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-700/50"> Корзина <div class="ml-1 animate-pulse"> ({countLengthCart})</div> </a>
                     </div>
                 </div>
             </div>

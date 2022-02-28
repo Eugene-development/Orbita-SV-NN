@@ -8,3 +8,5 @@ export const formEmail = writable(true)
 export const descriptionInfo = writable(true)
 export const paymentInfo = writable(false)
 export const deliveryInfo = writable(false)
+
+export const lengthCart = writable(0)
