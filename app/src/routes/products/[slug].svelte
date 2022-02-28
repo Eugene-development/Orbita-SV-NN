@@ -29,6 +29,10 @@
 
 <script>
     import { concat } from 'lodash';
+    import {lengthCart} from "../../stores";
+    import {useReturn} from "$lib/use/functions/return";
+    const {current} = useReturn;
+
     export let title
     export let description
     export let nameCategory
@@ -45,8 +49,13 @@
             localStorage.setItem('inCart', JSON.stringify(newItemsCart));
             const productsInCart = JSON.parse(localStorage.getItem('inCart'));
 
-            const lengthCart = productsInCart.length
+            const visibleLengthCart = productsInCart.length
+
+            lengthCart.update(() => visibleLengthCart)
+
         }
+
+
     }
 
 </script>
