@@ -57,7 +57,6 @@
     let arrayProductsInCart;
     InCart.subscribe(value => arrayProductsInCart = value)
 
-
 </script>
 
 <svelte:head>
@@ -65,7 +64,6 @@
     <meta name="description" content="{description}">
 </svelte:head>
 
-{arrayProductsInCart}
 <div class="bg-blueGray-50">
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
         <div class="flex flex-col text-center w-full">
@@ -96,7 +94,7 @@
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                         <div class="w-0 flex-1 flex">
-                            {#if (true)}
+                            {#if (!arrayProductsInCart.some(arrVal => id === arrVal))}
                             <button
                               on:click|preventDefault|once={sendToCart(id)}
                               class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
