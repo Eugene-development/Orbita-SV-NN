@@ -1,7 +1,5 @@
-const current = param => param
-const invertToTrue = () => true
-const invertToFalse = () => false
+const currentValue = (value) => value
 
 export const useReturn = {
-  current
+  currentValue
 }

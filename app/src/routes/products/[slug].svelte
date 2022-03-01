@@ -28,10 +28,10 @@
 </script>
 
 <script>
-    import { concat } from 'lodash';
-    import {lengthCart} from "../../stores";
+    import { concat, some } from 'lodash';
+    import { lengthCart, InCart, informationMenu } from "../../stores";
     import {useReturn} from "$lib/use/functions/return";
-    const {current} = useReturn;
+    const {currentValue} = useReturn;
 
     export let title
     export let description
@@ -42,31 +42,34 @@
 
     const sendToCart = (id) => {
         if (localStorage.getItem('inCart') === null) {
-            localStorage.setItem('inCart', JSON.stringify(id));
+            localStorage.setItem('inCart', JSON.stringify([id]));
+            const productsInCart = JSON.parse(localStorage.getItem('inCart'));
+            const visibleLengthCart = productsInCart.length
+            lengthCart.update(() => currentValue(visibleLengthCart))
+            InCart.update(() => productsInCart)
         } else {
             const itemsCart = JSON.parse(localStorage.getItem('inCart'));
             const newItemsCart = concat(itemsCart, id)
             localStorage.setItem('inCart', JSON.stringify(newItemsCart));
             const productsInCart = JSON.parse(localStorage.getItem('inCart'));
-
             const visibleLengthCart = productsInCart.length
-
-            lengthCart.update(() => visibleLengthCart)
-
+            lengthCart.update(() => currentValue(visibleLengthCart))
+            InCart.update(() => productsInCart)
         }
-
-
     }
 
-</script>
+    let arrayProductsInCart;
+    InCart.subscribe(value => arrayProductsInCart = value)
 
+
+</script>
 
 <svelte:head>
     <title>{title}</title>
     <meta name="description" content="{description}">
 </svelte:head>
 
-
+{arrayProductsInCart}
 <div class="bg-blueGray-50">
     <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
         <div class="flex flex-col text-center w-full">
