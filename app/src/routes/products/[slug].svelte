@@ -43,19 +43,15 @@
     const sendToCart = (id) => {
         if (localStorage.getItem('inCart') === null) {
             localStorage.setItem('inCart', JSON.stringify([id]));
-            const productsInCart = JSON.parse(localStorage.getItem('inCart'));
-            const visibleLengthCart = productsInCart.length
-            lengthCart.update(() => currentValue(visibleLengthCart))
-            InCart.update(() => productsInCart)
         } else {
             const itemsCart = JSON.parse(localStorage.getItem('inCart'));
             const newItemsCart = concat(itemsCart, id)
             localStorage.setItem('inCart', JSON.stringify(newItemsCart));
-            const productsInCart = JSON.parse(localStorage.getItem('inCart'));
-            const visibleLengthCart = productsInCart.length
-            lengthCart.update(() => currentValue(visibleLengthCart))
-            InCart.update(() => productsInCart)
         }
+        const productsInCart = JSON.parse(localStorage.getItem('inCart'));
+        const visibleLengthCart = productsInCart.length
+        lengthCart.update(() => currentValue(visibleLengthCart))
+        InCart.update(() => productsInCart)
     }
 
     let arrayProductsInCart;
