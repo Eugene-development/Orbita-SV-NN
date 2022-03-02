@@ -28,6 +28,7 @@
 </script>
 
 <script>
+    import axios from "axios";
     import { concat, some } from 'lodash';
     import { lengthCart, InCart, informationMenu } from "../../stores";
     import {useReturn} from "$lib/use/functions/return";
@@ -42,7 +43,7 @@
     export let pathAWS
 
 
-    const sendToCart = (id) => {
+    const sendToCart = async (id) => {
         if (localStorage.getItem('inCart') === null) {
             localStorage.setItem('inCart', JSON.stringify([id]));
         } else {
@@ -54,6 +55,20 @@
         const visibleLengthCart = productsInCart.length
         lengthCart.update(() => currentValue(visibleLengthCart))
         InCart.update(() => productsInCart)
+
+
+        const url = `/store-cart`;
+        const payloadCart = {
+            product_id: id,
+            sessionUser: localStorage.getItem('dataS')
+        };
+        const apiCart = {
+            baseURL: 'https://adminexpo.com:7711/',
+            headers: {
+                Authorization: `Bearer 1`
+            }
+        }
+        await axios.post(url, payloadCart, apiCart);
     }
 
     let idProductsInCart;
