@@ -3,6 +3,9 @@
 </script>
 
 <script>
+	import {useActions} from "$lib/use/content/actions";
+	const {mainAction} = useActions;
+
 	const page = 'Главная';
 	const title = 'База строительных и отделочных материалов "Орбита-Строй"'
 	const description = 'Интернет-магазин строительных и отделочных материалов "Орбита-строй"\n'
@@ -14,6 +17,17 @@
 	<meta name="description" content="{description}">
 </svelte:head>
 
+<div class="mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+	<div class="lg:text-center">
+		<p class="text-base leading-6 text-teal-800 font-semibold tracking-wide uppercase"></p>
+		<h2 class=" mt-2 text-4xl leading-12 font-extrabold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
+			Акция
+		</h2>
+		<p class="mt-4 max-w-5xl text-xl leading-7 text-gray-500 lg:mx-auto">
+			Акционное ограниченное предложение. Актуальное наличие уточняйте у наших менеджеров по рабочим телефонам. Обращайте внимание на сроки проведения акций.
+		</p>
+	</div>
+</div>
 
 <div class="bg-white">
 	<div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -30,10 +44,10 @@
 			<div class="max-w-2xl mx-auto mt-14 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
 				<div class="flex flex-col-reverse">
 					<div class="mt-4">
-						<h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Application UI Icon Pack</h1>
+						<h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{mainAction[0].action}</h1>
 
 						<h2 id="information-heading" class="sr-only">Информация по акции</h2>
-						<p class="text-sm text-gray-500 mt-2">Акция действует с 1 Марта 2022 года</p>
+						<p class="text-sm text-gray-500 mt-2">Акция действует с {mainAction[0].startDate} 2022 года</p>
 					</div>
 
 					<div>
@@ -73,10 +87,10 @@
 					</div>
 				</div>
 
-				<p class="text-gray-500 mt-6">The Application UI Icon Pack comes with over 200 icons in 3 styles: outline, filled, and branded. This playful icon pack is tailored for complex application user interfaces with a friendly and legible look.</p>
+				<p class="text-gray-500 mt-6">{mainAction[0].descriptionAction}</p>
 
 				<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-					<button type="button" class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">220 р/кг</button>
+					<button type="button" class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">{mainAction[0].newPrice} р/{mainAction[0].unit}</button>
 					<button type="button" class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">В корзину</button>
 				</div>
 

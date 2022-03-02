@@ -27,5 +27,6 @@ const actions = [
 ]
 
 export const useActions = {
+    mainAction,
     actions
 }
