@@ -40,18 +40,28 @@
         <span class="block text-base text-center text-red-800 font-semibold tracking-wide uppercase">О нашей компании</span>
         <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">"Орбита-строй"</span>
       </h1>
-      <p class="mt-8 text-xl text-gray-500 leading-8">Компания «Орбита-Строй» с 2011 года успешно продает строительные и отделочные материалы оптом и в розницу. С нами Вы легко сможете подобрать нужный и экономичный материал для выполнения различных строительно-отделочных работ. Наши специалисты также помогут подготовить смету и подсчитать стоимость расходов. И все это осуществляется в самые кратчайшие сроки с должным уровнем профессионализма.</p>
+      <p class="mt-8 text-xl text-gray-500 leading-8">Компания «Орбита-строй» успешно работает на рынке строительных и отделочных материалов с 2015 года. Мы находимся в городе Дзержинск (центральная база на выезде в Нижний Новгород) и в Нижнем Новгороде (пластиковые окна), располагаем удобными выставочными павильонами, благоустроенными подъездными путями. Главные преимущества компании:</p>
     </div>
     <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
       <ul>
-        <li>Идеальный для потребителя баланс между ценой и качеством</li>
-        <li>Индивидуальный подход к доставке стройматериалов до объекта клиента.</li>
-        <li>Возможность покупки товаров оптовыми партиями со значительной скидкой.</li>
-        <li>Высокий уровень профессиональной подготовленности персонала.</li>
+        <li>работаем каждую субботу;</li>
+        <li>богатый ассортимент продукции;</li>
+        <li>отлаженное пополнение складского запаса;</li>
+        <li>низкие цены и акции распродаж;</li>
+        <li>удобные условия оплаты;</li>
+        <li>прием заказов в любое время.</li>
       </ul>
-      <h3>Предлагаем возможность размещения рекламных материалов на нашем сайте.</h3>
+      <h3 class="mt-8 text-xl text-gray-500 leading-8">Предлагаем возможность размещения рекламных материалов на нашем сайте.</h3>
+      <p class="mt-8 text-xl text-gray-500 leading-8">Приобрести стройматериалы оптом и в розницу наша компания «Орбита-строй» вы можете с доставкой или самовывозом. При заказе от 10000 р доставка заказов весом до 1500 кг предоставляется бесплатно. Для каждого покупателя предусмотрены скидки на объемные заказы. Для постоянных клиентов действуют льготные условия, в числе которых:</p>
+      <ul>
+        <li>отсрочка платежа;</li>
+        <li>бесплатная погрузка (при самовывозе) и доставка;</li>
+        <li>отложенная отгрузка к определенной дате;</li>
+        <li>комплексные поставки.</li>
+      </ul>
+
       <figure>
-        <img class="w-full rounded-lg" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3" alt="" width="1310" height="873">
+        <img class="mt-24 w-full rounded-lg" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="company" width="1310" height="873">
       </figure>
       <!--        <p>Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam varius orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras fermentum convallis quam.</p>-->
       <!--        <p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.</p>-->

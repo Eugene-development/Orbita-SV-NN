@@ -61,7 +61,8 @@
                 </div>
                 <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
                     <nav class="flex space-x-10">
-                        <a href="/company" class="text-lg font-medium text-indigo-900 hover:text-red-800"> Компания </a>
+                        <a href="/" class="text-lg font-medium text-indigo-900 hover:text-red-800">Главная</a>
+                        <a href="/company" class="text-lg font-medium text-indigo-900 hover:text-red-800">Компания</a>
                         <div>
                             <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                             <button on:click={changeVisibleInformationMenu} type="button" class="text-indigo-900 hover:text-red-800 group bg-white rounded-md inline-flex items-center text-lg font-medium focus:outline-none focus:text-red-700" aria-expanded="false">

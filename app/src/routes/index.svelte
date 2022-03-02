@@ -35,7 +35,7 @@
 			<!-- Product image -->
 			<div class="lg:row-end-1 lg:col-span-4">
 				<div class="aspect-w-4 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden">
-					<img src="https://tailwindui.com/img/ecommerce-images/product-page-05-product-01.jpg" alt="Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles." class="object-center object-cover">
+					<img src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/images/a12adc654dac54907a50bc61812e8093.jpg" alt="action product" class="object-center object-cover">
 				</div>
 			</div>
 
@@ -45,8 +45,8 @@
 					<div class="mt-4">
 						<h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Application UI Icon Pack</h1>
 
-						<h2 id="information-heading" class="sr-only">Product information</h2>
-						<p class="text-sm text-gray-500 mt-2">Начало распродажи 1 Марта 2022 года</p>
+						<h2 id="information-heading" class="sr-only">Информация по акции</h2>
+						<p class="text-sm text-gray-500 mt-2">Акция действует с 1 Марта 2022 года</p>
 					</div>
 
 					<div>
@@ -94,10 +94,10 @@
 				</div>
 
 				<div class="border-t border-gray-200 mt-10 pt-10">
-					<h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+					<h3 class="text-sm font-medium text-gray-900">Характеристики:</h3>
 					<div class="mt-4 prose prose-sm text-gray-500">
 						<ul role="list">
-							<li>200+ SVG icons in 3 unique styles</li>
+							<li>Мешки по 25 кг</li>
 
 							<li>Compatible with Figma, Sketch, and Adobe XD</li>
 
