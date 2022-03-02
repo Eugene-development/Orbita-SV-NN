@@ -31,6 +31,8 @@
     import { concat, some } from 'lodash';
     import { lengthCart, InCart, informationMenu } from "../../stores";
     import {useReturn} from "$lib/use/functions/return";
+    import { browser} from "$app/env";
+
     const {currentValue} = useReturn;
 
     export let title
@@ -54,8 +56,8 @@
         InCart.update(() => productsInCart)
     }
 
-    let arrayProductsInCart;
-    InCart.subscribe(value => arrayProductsInCart = value)
+    let idProductsInCart;
+    InCart.subscribe(value => browser && (idProductsInCart = value));
 
 </script>
 
@@ -94,7 +96,7 @@
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                         <div class="w-0 flex-1 flex">
-                            {#if (!arrayProductsInCart.some(arrVal => id === arrVal))}
+                            {#if !(idProductsInCart).some(arrVal => id === arrVal)}
                             <button
                               on:click|preventDefault|once={sendToCart(id)}
                               class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
