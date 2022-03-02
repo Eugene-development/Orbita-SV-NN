@@ -1,21 +1,8 @@
 <script context="module">
-	export const load = async ({fetch}) => {
 
-		const res = await fetch("/api/layout/header/heads")
-		const heads = await res.json();
-
-		const data = heads.heads.data
-		return {
-			props: {
-				data
-			}
-		}
-	}
 </script>
 
 <script>
-	export let data;
-
 	const page = 'Главная';
 	const title = 'База строительных и отделочных материалов "Орбита-Строй"'
 	const description = 'Интернет-магазин строительных и отделочных материалов "Орбита-строй"\n'
