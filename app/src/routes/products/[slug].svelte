@@ -72,7 +72,7 @@
     }
 
     let idProductsInCart;
-    InCart.subscribe(value => browser && (idProductsInCart = value));
+    InCart.subscribe(value => idProductsInCart = value);
 
 </script>
 
