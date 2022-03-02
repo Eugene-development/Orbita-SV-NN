@@ -16,5 +16,5 @@ export const lengthCart = writable(0)
 export const InCart = writable([]) //TODO задать начальное значение при наличии товаров в корзине при перезагрузке страницы
 
 
-
-export const session =  writable(browser && localStorage.setItem('dataS', '778'))
+import { v4 as uuid } from '@lukeed/uuid';
+export const session =  writable(browser && localStorage.setItem('dataS', uuid()))

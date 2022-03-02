@@ -42,7 +42,7 @@
     export let products
     export let pathAWS
 
-
+// TODO А если из хэлера забирать локал сторадж???? Для фикса бага перезагрузки
     const sendToCart = async (id) => {
         if (localStorage.getItem('inCart') === null) {
             localStorage.setItem('inCart', JSON.stringify([id]));
