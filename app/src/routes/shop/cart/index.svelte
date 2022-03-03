@@ -65,7 +65,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
 
-            {#each productsInCart as {name}, idx}
+            {#each productsInCart as {name, size, unit}, idx}
             <tr   >
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 { idx + 1 }
@@ -103,7 +103,7 @@
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  <!--{{ item.size[0].price.price }} руб/{{ item.unit }}-->
+                  { size[0].price.price } руб/{ unit }
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
