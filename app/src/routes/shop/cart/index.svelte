@@ -4,16 +4,18 @@
 
 
   import axios from "axios";
-  const domain = import.meta.env.VITE_API_CART;
-  const dataS = browser && localStorage.getItem('dataS')
-  const url = `${ domain }/get-cart/${ dataS }`;
-  const headers = {
-    Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
-  }
-  let productsInCart;
+
+  let productsInCart = [];
   onMount(async () => {
+    const domain = import.meta.env.VITE_API_CART;
+    const dataS = browser && localStorage.getItem('dataS')
+    const url = `${ domain }/get-cart/${ dataS }`;
+    const headers = {
+      Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
+    }
+
     const res = await axios(url, { headers });
-    const productsInCart = res.data;
+    productsInCart = res.data;
     console.log(productsInCart)
   });
 
@@ -62,8 +64,6 @@
             </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-
-
 
             {#each productsInCart as {name}}
             <tr   >
@@ -124,7 +124,6 @@
               </td>
             </tr>
               {/each}
-
             </tbody>
           </table>
         </div>

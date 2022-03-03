@@ -9,6 +9,7 @@
 		browser && localStorage.setItem('dataS', uuid())
 	}
 
+
 </script>
 
 

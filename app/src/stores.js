@@ -13,10 +13,7 @@ export const deliveryInfo = writable(false)
 export const lengthCart = writable(0)
 
 // export const InCart = writable(browser && localStorage.getItem('inCart') )
-export let InCart;
-if (!InCart) {
-  InCart = writable([]) //TODO задать начальное значение при наличии товаров в корзине при перезагрузке страницы ИЗ ХЭЛПЕРА
-}
+ export const InCart = writable([]) //TODO задать начальное значение при наличии товаров в корзине при перезагрузке страницы ИЗ ХЭЛПЕРА
 
 
 import { v4 as uuid } from '@lukeed/uuid';

@@ -54,7 +54,7 @@
         const productsInCart = JSON.parse(localStorage.getItem('inCart'));
         const visibleLengthCart = productsInCart.length
         lengthCart.update(() => currentValue(visibleLengthCart))
-        InCart.update(() => productsInCart)
+       InCart.update(() => productsInCart)
 
 
         const url = `/store-cart`;
@@ -72,7 +72,11 @@
     }
 
     let idProductsInCart;
-    InCart.subscribe(value => idProductsInCart = value);
+   if (browser) {
+       InCart.subscribe(value => idProductsInCart = value);
+   } else {
+       idProductsInCart = JSON.parse(browser && localStorage.getItem('inCart'))
+   }
 
 </script>
 
