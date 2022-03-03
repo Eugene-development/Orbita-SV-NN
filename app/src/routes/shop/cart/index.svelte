@@ -65,7 +65,7 @@
 
 
 
-
+            {#each productsInCart as {name}}
             <tr   >
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <!--{{ idx + 1 }}-->
@@ -78,7 +78,7 @@
                   <!--                    </div>-->
                   <div class="">
                     <div class="text-sm font-medium text-gray-900">
-                      <!--{{ item.name }}-->
+                      {name}
                     </div>
                     <div class="text-sm text-gray-500">
                       <!--                        jane.cooper@example.com-->
@@ -123,6 +123,7 @@
 <!--                </button>-->
               </td>
             </tr>
+              {/each}
 
             </tbody>
           </table>

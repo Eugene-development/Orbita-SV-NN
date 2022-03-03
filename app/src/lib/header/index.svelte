@@ -188,7 +188,7 @@
     <div class="bg-gray-50 pt-6 sm:pt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-extrabold text-gray-800 sm:text-4xl">
+                <h2 class="text-3xl font-extrabold text-indigo-900 sm:text-4xl">
                    Доставка строительных и отделочных материалов до объекта
                 </h2>
                 <p class="mt-3 text-xl text-indigo-900 sm:mt-4">
