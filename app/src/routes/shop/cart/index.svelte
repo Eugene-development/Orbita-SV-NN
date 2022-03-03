@@ -3,21 +3,17 @@
 
   import axios from "axios";
   const domain = import.meta.env.VITE_API_CART;
-  const url = `${ domain }/get-cart/7e12df82-dd85-4c90-bb00-09687b281328`;
+  const dataS = localStorage.getItem('dataS')
+  const url = `${ domain }/get-cart/${ dataS }`;
   const headers = {
     Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
   }
-
-
-
-
-  let res = [];
-
   onMount(async () => {
-
     const res = await axios(url, { headers });
-    console.log(res.data)
+    const productsInCart = res.data;
+    console.log(productsInCart)
   });
+
 </script>
 
 <svelte:head>
