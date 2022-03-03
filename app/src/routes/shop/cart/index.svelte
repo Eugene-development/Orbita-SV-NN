@@ -35,6 +35,7 @@
 
 
   <!-- This example requires Tailwind CSS v2.0+ -->
+  {#if (productsInCart.length > 0)}
   <div  class="m-8 flex flex-col">
 <!--  <div v-if="cartList.length > 0" class="m-8 flex flex-col">-->
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -123,13 +124,15 @@
 <!--                </button>-->
               </td>
             </tr>
-              {/each}
+            {/each}
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+  {:else }
   <div class="m-8">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="rounded-md bg-blue-50 p-4">
@@ -154,7 +157,9 @@
       </div>
     </div>
   </div>
+  {/if}
 
+  {#if (productsInCart.length > 0)}
   <div class="m-8 text-right">
       <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
        ИТОГО (с учётом скидки 5%):  руб.
@@ -339,4 +344,6 @@
 
 
 </div>
+  {/if}
+
 </div>
