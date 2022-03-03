@@ -149,6 +149,19 @@
               </div>
               <div class="-ml-px w-0 flex-1 flex">
                 <!--                        <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
+<!--                <div class="relative mx-8 flex-1 inline-flex items-center justify-center text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                  </svg>-->
+
+<!--                    <div class="mt-1 mx-4">-->
+<!--                      <input type="email" name="email" id="email" class="h-6 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-center" placeholder="1">-->
+<!--                    </div>-->
+
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" >-->
+<!--                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                  </svg>-->
+<!--                </div>-->
                 <a sveltekit:prefetch sveltekit:noscroll href="/product/{slug}/?id={id}"
                    class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
                   <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
