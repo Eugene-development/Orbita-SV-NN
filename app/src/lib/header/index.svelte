@@ -5,6 +5,8 @@
     import {useHead} from "$lib/use/content/header";
     import {useVisible} from "$lib/use/functions/visible";
     import {informationMenu, lengthCart} from '../../stores.js';
+    import { onMount } from "svelte";
+    import { browser } from "$app/env";
 
     const {head, information} = useHead; //TODO влоенную деструктуризацию примени
     const {left: leftInfo, right: rightInfo} = information[0]
@@ -17,8 +19,12 @@
 
     // const setId = (id) => localStorage.setItem('inCart', id);
 
-
     let countLengthCart;
+    onMount(async () => {
+        if (browser && localStorage.getItem("inCart") !== null) {
+            countLengthCart = JSON.parse(browser && localStorage.getItem("inCart")).length;
+        }
+    });
     lengthCart.subscribe(value => countLengthCart = value)
 
 </script>
