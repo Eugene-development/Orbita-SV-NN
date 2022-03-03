@@ -1,13 +1,16 @@
 <script>
   import { onMount } from 'svelte';
+  import { browser} from "$app/env";
+
 
   import axios from "axios";
   const domain = import.meta.env.VITE_API_CART;
-  const dataS = localStorage.getItem('dataS')
+  const dataS = browser && localStorage.getItem('dataS')
   const url = `${ domain }/get-cart/${ dataS }`;
   const headers = {
     Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
   }
+  let productsInCart;
   onMount(async () => {
     const res = await axios(url, { headers });
     const productsInCart = res.data;
@@ -59,7 +62,6 @@
             </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-
 
 
 
@@ -121,7 +123,6 @@
 <!--                </button>-->
               </td>
             </tr>
-
 
             </tbody>
           </table>
