@@ -65,10 +65,10 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
 
-            {#each productsInCart as {name}}
+            {#each productsInCart as {name}, idx}
             <tr   >
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <!--{{ idx + 1 }}-->
+                { idx + 1 }
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
