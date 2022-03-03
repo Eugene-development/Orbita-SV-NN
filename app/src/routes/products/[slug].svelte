@@ -33,6 +33,8 @@
     import { lengthCart, InCart, informationMenu } from "../../stores";
     import {useReturn} from "$lib/use/functions/return";
     import { browser} from "$app/env";
+    import { onMount } from "svelte";
+    import { v4 as uuid } from "@lukeed/uuid";
 
     const {currentValue} = useReturn;
 
@@ -72,11 +74,19 @@
     }
 
     let idProductsInCart;
-   if (browser) {
+
+    onMount(async () => {
+        if (browser && localStorage.getItem('inCart') !== null){
+            idProductsInCart = JSON.parse(browser && localStorage.getItem('inCart'))
+        }
+
+    });
+
+
+
+
+
        InCart.subscribe(value => idProductsInCart = value);
-   } else {
-       idProductsInCart = JSON.parse(browser && localStorage.getItem('inCart'))
-   }
 
 </script>
 
