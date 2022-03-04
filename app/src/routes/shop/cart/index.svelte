@@ -1,8 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { browser } from "$app/env";
-
-
   import axios from "axios";
 
   let productsInCart = [];
@@ -22,6 +20,9 @@
   const test = () => {
     console.log('123')
   }
+
+
+  let currentQuantity = 1;
 </script>
 
 <svelte:head>
@@ -97,7 +98,14 @@
 
                     <div class="flex">
                       <div class="mr-2 relative rounded-md shadow-sm">
-                        <input type="text" name="account-number" id="account-number" class="focus:ring-red-800 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md" placeholder="Введите количество">
+                        <input
+                          type="text"
+                          name="account-number"
+                          id="account-number"
+                          class="focus:ring-red-800 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md"
+                          placeholder="Введите количество"
+                          value={currentQuantity}
+                        >
                       </div>
                       <button type="button" class="">
                         <svg on:click={test} xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
