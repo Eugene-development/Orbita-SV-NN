@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
-  import { browser} from "$app/env";
+  import { onMount } from "svelte";
+  import { browser } from "$app/env";
 
 
   import axios from "axios";
@@ -8,8 +8,8 @@
   let productsInCart = [];
   onMount(async () => {
     const domain = import.meta.env.VITE_API_CART;
-    const dataS = browser && localStorage.getItem('dataS')
-    const url = `${ domain }/get-cart/${ dataS }`;
+    const dataS = browser && localStorage.getItem("dataS");
+    const url = `${domain}/get-cart/${dataS}`;
     const headers = {
       Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
     }
@@ -114,23 +114,20 @@
                     </div>
 
 
-
-
-
-
                     <!--                    <input-->
-<!--                      :title="`${item.id}`"-->
-<!--                      :value="`${item.quantity}`"-->
-<!--                      class="shadow-sm focus:ring-red-800 focus:border-red-800 block w-full sm:text-sm border-gray-300 rounded-md"-->
-<!--                      name="count"-->
-<!--                      placeholder="Введите количество"-->
-<!--                      type="text"-->
-<!--                      @input="setCurrentQuantityCart">-->
-<!--                  </div>-->
+                    <!--                      :title="`${item.id}`"-->
+                    <!--                      :value="`${item.quantity}`"-->
+                    <!--                      class="shadow-sm focus:ring-red-800 focus:border-red-800 block w-full sm:text-sm border-gray-300 rounded-md"-->
+                    <!--                      name="count"-->
+                    <!--                      placeholder="Введите количество"-->
+                    <!--                      type="text"-->
+                    <!--                      @input="setCurrentQuantityCart">-->
+                    <!--                  </div>-->
+                  </div>
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                <span class="px-2 inline-flex text-sm leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   { size[0].price.price } руб/{ unit }
                 </span>
               </td>
@@ -149,6 +146,14 @@
 <!--                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>-->
 <!--                  </svg>-->
 <!--                </button>-->
+                <button
+                  class="inline-flex items-center p-1.5 border border-transparent rounded-full shadow-sm text-white bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  type="button">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  </svg>
+                </button>
               </td>
             </tr>
             {/each}
