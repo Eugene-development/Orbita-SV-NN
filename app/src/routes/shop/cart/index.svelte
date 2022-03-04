@@ -19,6 +19,9 @@
     console.log(productsInCart)
   });
 
+  const test = () => {
+    console.log('123')
+  }
 </script>
 
 <svelte:head>
@@ -92,24 +95,22 @@
                 <div>
                   <div class="mt-1 ">
 
-                    <div >
-                      <div class="mt-1 relative rounded-md shadow-sm">
-                        <input type="text" name="account-number" id="account-number" class="mr-8 focus:ring-red-800 focus:border-indigo-500 block w-full pr-10 sm:text-sm border-gray-300 rounded-md" placeholder="Введите количество">
-                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <!-- Heroicon name: solid/question-mark-circle -->
-                          <button class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </button>
-
-                          <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </button>
-                        </div>
+                    <div class="flex">
+                      <div class="mr-2 relative rounded-md shadow-sm">
+                        <input type="text" name="account-number" id="account-number" class="focus:ring-red-800 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md" placeholder="Введите количество">
                       </div>
+                      <button type="button" class="">
+                        <svg on:click={test} xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </button>
+
+                      <button type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </button>
+
                     </div>
 
 
