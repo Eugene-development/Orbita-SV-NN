@@ -22,7 +22,6 @@
   }
 
 
-  let currentQuantity = 1;
 </script>
 
 <svelte:head>
@@ -70,7 +69,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
 
-            {#each productsInCart as {name, size, unit}, idx}
+            {#each productsInCart as {name, size, unit, quantity}, idx}
             <tr   >
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 { idx + 1 }
@@ -100,11 +99,9 @@
                       <div class="mr-2 relative rounded-md shadow-sm">
                         <input
                           type="text"
-                          name="account-number"
-                          id="account-number"
                           class="focus:ring-red-800 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md"
                           placeholder="Введите количество"
-                          value={currentQuantity}
+                          bind:value={quantity}
                         >
                       </div>
                       <button type="button" class="">
