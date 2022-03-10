@@ -24,9 +24,9 @@ l(productsInCart)
   });
 
   const total = productsInCart.reduce((sum, product) => {
-    let total = 0;
-    total = product.size[0].price.price
-    return sum + total * product.quantity;
+    let price = 0;
+    price = product.size[0].price.price
+    return sum + price * product.quantity;
   }, 0);
 
   totalSum = (total - total * 0.05).toFixed(2);
@@ -212,9 +212,9 @@ l(productsInCart)
   <div class="m-8 text-right">
       <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
        ИТОГО : {productsInCart.reduce((sum, product) => {
-        let total = 0;
-        total = product.size[0].price.price
-        return sum + total * product.quantity;
+        let price = 0;
+        price = product.size[0].price.price
+        return sum + price * product.quantity;
       }, 0)}  руб.
         <!--        TODO по дефолту ноль стоит в корзине-->
       </span>
