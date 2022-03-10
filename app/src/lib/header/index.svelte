@@ -1,19 +1,19 @@
 <script>
-    import {clickOutside} from "$lib/use/functions/click_outside/index.js";
+    import { clickOutside } from "$lib/use/functions/click_outside/index.js";
 
-    import MobileMenu from "./mobile/index.svelte"
-    import {useHead} from "$lib/use/content/header";
-    import {useVisible} from "$lib/use/functions/visible";
-    import {informationMenu, lengthCart} from '../../stores.js';
+    import MobileMenu from "./mobile/index.svelte";
+    import { useHead } from "$lib/use/content/header";
+    import { useVisible } from "$lib/use/functions/visible";
+    import { informationMenu, lengthCart } from "../../stores.js";
     import { onMount } from "svelte";
     import { browser } from "$app/env";
 
-    const {head, information} = useHead; //TODO влоенную деструктуризацию примени
-    const {left: leftInfo, right: rightInfo} = information[0]
+    const { head, information } = useHead; //TODO влоенную деструктуризацию примени
+    const { left: leftInfo, right: rightInfo } = information[0];
 
-    const {invert} = useVisible;
+    const { invert } = useVisible;
 
-    const changeVisibleInformationMenu = () => informationMenu.update(invert)
+    const changeVisibleInformationMenu = () => informationMenu.update(invert);
     let visibleInformationMenu;
     informationMenu.subscribe(value => visibleInformationMenu = value);
 
@@ -176,11 +176,16 @@
                         <a href="https://vk.com/orbita_stroy" target="_blank" class="text-lg font-medium text-indigo-900 hover:text-red-800"> VK </a>
                     </nav>
                     <div class="flex items-center md:ml-12">
-                        <a sveltekit:noscroll href="/shop/cart" class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-700/50">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <a class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-700/50" href="/shop/cart"
+                           sveltekit:noscroll>
+                            <svg class="mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" />
                             </svg>
-                            Корзина <div class="ml-1 animate-pulse"> ({countLengthCart})</div> </a>
+                            Корзина
+                            <div class="ml-1 animate-pulse">({countLengthCart})</div>
+                        </a>
                     </div>
                 </div>
             </div>

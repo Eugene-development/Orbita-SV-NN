@@ -3,6 +3,8 @@
   import { browser } from "$app/env";
   import axios from "axios";
 
+  const l = console.log
+
   let productsInCart = [];
   let totalSum = 0;
   onMount(async () => {
@@ -16,26 +18,39 @@
     const res = await axios(url, { headers });
     productsInCart = res.data;
 
+l(productsInCart)
 
 
-    const total = productsInCart.reduce((sum, product) => {
-      let total = 0;
-      total = product.size[0].price.price
-      return sum + total * product.quantity;
-    }, 0);
-
-    console.log(total)
-    totalSum = (total - total * 0.05).toFixed(2);
   });
 
+  const total = productsInCart.reduce((sum, product) => {
+    let total = 0;
+    total = product.size[0].price.price
+    return sum + total * product.quantity;
+  }, 0);
+
+  totalSum = (total - total * 0.05).toFixed(2);
 
 
+  //let count = 0;
+  //$: quantity = count;
+
+  //function handleClick() {
+ //   count += 1;
+ // }
+
+
+
+  function handleClick(id) {
+    l(productsInCart)
+  }
 </script>
 
 <svelte:head>
   <title>Корзина</title>
   <meta name="description" content="Корзина интернет-магазина компании 'Орбита строй'">
 </svelte:head>
+
 
 <div class="bg-gray-50">
   <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
@@ -77,8 +92,8 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
 
-            {#each productsInCart as {name, size, unit, quantity}, idx}
-            <tr   >
+            {#each productsInCart as {id, name, size, unit, quantity}, idx}
+            <tr>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 { idx + 1 }
               </td>
@@ -112,17 +127,17 @@
                           bind:value={quantity}
                         >
                       </div>
-                      <button type="button" class="">
-                        <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </button>
+<!--                      <button type="button" class="" on:click={handleClick(id)}>-->
+<!--                        <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">-->
+<!--                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                        </svg>-->
+<!--                      </button>-->
 
-                      <button type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </button>
+<!--                      <button type="button">-->
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">-->
+<!--                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                        </svg>-->
+<!--                      </button>-->
 
                     </div>
                   </div>
