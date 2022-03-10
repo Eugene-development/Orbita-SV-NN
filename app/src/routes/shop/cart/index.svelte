@@ -24,12 +24,11 @@
   });
 
 
-
-  // const total = productsInCart.reduce((sum, product) => {
-  //   let price = 0;
-  //   price = product.size[0].price.price
-  //   return sum + price * product.quantity;
-  // }, 0);
+  $: total = productsInCart.reduce((sum, product) => {
+    let price = 0;
+    price = product.size[0].price.price
+    return sum + price * product.quantity;
+  }, 0);
 
   // let totalSum = 0;
   // totalSum = (total - total * 0.05).toFixed(2);
@@ -58,7 +57,6 @@
   <title>Корзина</title>
   <meta name="description" content="Корзина интернет-магазина компании 'Орбита строй'">
 </svelte:head>
-
 
 <div class="bg-gray-50">
   <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
@@ -218,14 +216,7 @@
 
   {#if (productsInCart.length > 0)}
   <div class="m-8 text-right">
-      <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">
-       ИТОГО : {productsInCart.reduce((sum, product) => {
-        let price = 0;
-        price = product.size[0].price.price
-        return sum + price * product.quantity;
-      }, 0)}  руб.
-        <!--        TODO по дефолту ноль стоит в корзине-->
-      </span>
+      <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">ИТОГО : {total}  руб.</span>
   </div>
   <div class="m-8 space-y-6">
 
