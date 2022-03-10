@@ -171,7 +171,7 @@
                                 </div>
                             {/if}
                         </div>
-                        <a href="/blog" class="text-lg text-indigo-900 hover:text-red-800"> Блог </a>
+<!--                        <a href="/blog" class="text-lg text-indigo-900 hover:text-red-800"> Блог </a>-->
                         <a href="/information/contact" class="text-lg text-indigo-900 hover:text-red-800"> Контакты </a>
                         <a href="https://vk.com/orbita_stroy" target="_blank" class="text-lg text-indigo-900 hover:text-red-800"> VK </a>
                     </nav>
@@ -196,7 +196,7 @@
     </div>
 
 
-    <div class="bg-gray-50 pt-6 sm:pt-8">
+    <div class="bg-gray-200 pt-6 sm:pt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-extrabold text-indigo-900 sm:text-4xl">
@@ -209,7 +209,7 @@
         </div>
         <div class="mt-6 pb-4 bg-white sm:pb-8">
             <div class="relative">
-                <div class="absolute inset-0 h-1/2 bg-gray-50 border-b border-gray-200"></div>
+                <div class="absolute inset-0 h-1/2 bg-gray-200 border-b border-gray-200"></div>
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="w-full mx-auto">
                         <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
