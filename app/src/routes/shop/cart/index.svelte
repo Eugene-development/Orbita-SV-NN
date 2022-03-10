@@ -23,13 +23,13 @@ l(productsInCart)
 
   });
 
-  const total = productsInCart.reduce((sum, product) => {
-    let price = 0;
-    price = product.size[0].price.price
-    return sum + price * product.quantity;
-  }, 0);
+  // const total = productsInCart.reduce((sum, product) => {
+  //   let price = 0;
+  //   price = product.size[0].price.price
+  //   return sum + price * product.quantity;
+  // }, 0);
 
-  totalSum = (total - total * 0.05).toFixed(2);
+  // totalSum = (total - total * 0.05).toFixed(2);
 
 
   //let count = 0;
