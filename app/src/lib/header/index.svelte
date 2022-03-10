@@ -202,9 +202,9 @@
                 <h2 class="text-3xl font-extrabold text-indigo-900 sm:text-4xl">
                    Доставка строительных и отделочных материалов до объекта
                 </h2>
-                <p class="mt-3 text-xl text-indigo-900 sm:mt-4">
-                    При заказе через каталог стройматериалов на сайте для вас скидка 5%
-                </p>
+<!--                <p class="mt-3 text-xl text-indigo-900 sm:mt-4">-->
+<!--                    При заказе через каталог стройматериалов на сайте для вас скидка 5%-->
+<!--                </p>-->
             </div>
         </div>
         <div class="mt-6 pb-4 bg-white sm:pb-8">
