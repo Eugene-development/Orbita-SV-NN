@@ -18,9 +18,6 @@
     const res = await axios(url, { headers });
     productsInCart = res.data;
 
-    l(productsInCart)
-
-
   });
 
 
@@ -30,8 +27,7 @@
     return sum + price * product.quantity;
   }, 0);
 
-  // let totalSum = 0;
-  // totalSum = (total - total * 0.05).toFixed(2);
+  $: totalSum = (total - total * 0.05).toFixed(2);
 
 
   //let count = 0;
@@ -133,11 +129,11 @@
                           bind:value={quantity}
                         >
                       </div>
-                      <button type="button" class="" on:click={handleClick(id)}>
-                        <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </button>
+<!--                      <button type="button" class="" on:click={handleClick(id)}>-->
+<!--                        <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">-->
+<!--                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
+<!--                        </svg>-->
+<!--                      </button>-->
 
 <!--                      <button type="button">-->
 <!--                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">-->
@@ -216,7 +212,7 @@
 
   {#if (productsInCart.length > 0)}
   <div class="m-8 text-right">
-      <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">ИТОГО : {total}  руб.</span>
+      <span  class="inline-flex  px-3.5 py-0.5 rounded-md text-xl font-medium bg-green-100 text-green-800">ИТОГО (с учётом скидки 5%) : {totalSum}  руб.</span>
   </div>
   <div class="m-8 space-y-6">
 
