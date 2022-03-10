@@ -45,7 +45,12 @@
 
 
   function handleClick(id) {
-    l(productsInCart)
+    const total = productsInCart.reduce((sum, product) => {
+      let price = 0;
+      price = product.size[0].price.price
+      return sum + price * product.quantity;
+    }, 0);
+    l(total)
   }
 </script>
 
