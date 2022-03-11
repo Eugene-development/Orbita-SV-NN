@@ -41,10 +41,7 @@
         Authorization: `Bearer 1`
       }
     };
-
-    const response = await axios.delete('delete-cart-one/' + id + '/' + localStorage.getItem('dataS'), apiCart);
-
-    l(response)
+    await axios.delete('delete-cart-one/' + id + '/' + localStorage.getItem('dataS'), apiCart);
   };
 
 
