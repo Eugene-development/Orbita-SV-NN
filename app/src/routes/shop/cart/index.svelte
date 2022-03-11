@@ -11,6 +11,10 @@
   const l = console.log
 
   let productsInCart = [];
+  $: first_name = ''
+  $: phone = ''
+  $: address = ''
+  $: comments = ''
 
   onMount(async () => {
     const domain = import.meta.env.VITE_API_CART;
@@ -76,6 +80,11 @@
   <title>Корзина</title>
   <meta name="description" content="Корзина интернет-магазина компании 'Орбита строй'">
 </svelte:head>
+
+{first_name}
+{phone}
+{address}
+{comments}
 
 <div class="bg-gray-50">
   <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
@@ -251,6 +260,14 @@
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 ">
               <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя</label>
+              <input
+                type="text"
+                required
+                id="first_name"
+                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                name="first_name"
+                bind:value={first_name}
+              >
 <!--              <input-->
 <!--                :class="{'bg-red-100': alertDanger.name}"-->
 <!--                :placeholder="[placeholder.name]"-->
@@ -264,7 +281,16 @@
 
             <div class="col-span-6">
               <label class="block text-sm font-medium text-gray-700" for="phone">Телефон</label>
-<!--              <input-->
+              <input
+                type="tel"
+                required
+                id="phone"
+                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                name="phone"
+                bind:value={phone}
+              >
+
+              <!--              <input-->
 <!--                :class="{'bg-red-100': alertDanger.phone}"-->
 <!--                :placeholder="[placeholder.phone]"-->
 <!--                :value="ruleForm.phone"-->
@@ -288,9 +314,17 @@
             <!--                    type="email">-->
             <!--                </div>-->
 
-            <div class="col-span-6">
+            <div class="col-span-6 mt-6">
               <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки</label>
-<!--              <input-->
+              <input
+                type="text"
+                id="street_address"
+                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                name="street_address"
+                bind:value={address}
+              >
+
+              <!--              <input-->
 <!--                :class="{'bg-red-100': alertDanger.address}"-->
 <!--                :placeholder="[placeholder.address]"-->
 <!--                :value="ruleForm.address"-->
@@ -302,9 +336,17 @@
 <!--                type="text">-->
             </div>
 
-            <div class="col-span-6">
+            <div class="col-span-6 mt-6">
               <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий</label>
-<!--              <input-->
+              <input
+                type="text"
+                id="comments"
+                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                name="comments"
+                bind:value={comments}
+              >
+
+              <!--              <input-->
 <!--                :class="{'bg-red-100': alertDanger.comments}"-->
 <!--                :placeholder="[placeholder.comments]"-->
 <!--                :value="ruleForm.comments"-->
