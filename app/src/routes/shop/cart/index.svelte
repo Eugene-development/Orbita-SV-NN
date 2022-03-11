@@ -3,7 +3,6 @@
   import { browser } from "$app/env";
   import axios from "axios";
   import { reject } from "lodash";
-  import { InCart, lengthCart } from "../../../stores";
 
   const l = console.log
 
