@@ -2,7 +2,11 @@
   import { onMount } from "svelte";
   import { browser } from "$app/env";
   import axios from "axios";
-  import { reject } from "lodash";
+  import { concat, reject, without} from "lodash";
+  import { InCart, lengthCart } from "../../../stores";
+  import { useReturn } from "$lib/use/functions/return";
+  const { currentValue } = useReturn;
+
 
   const l = console.log
 
@@ -33,6 +37,14 @@
 
   const deleteProductFromCart = async (id) => {
     $: productsInCart = reject(productsInCart, item => item.id === id);
+
+    const itemsCart = JSON.parse(localStorage.getItem("inCart"));
+    const newItemsCart = without(itemsCart, id);
+    localStorage.setItem("inCart", JSON.stringify(newItemsCart));
+
+    const visibleLengthCart = productsInCart.length;
+    lengthCart.update(() => currentValue(visibleLengthCart));
+    InCart.update(() => productsInCart);
 
     const apiCart = {
       baseURL: "https://adminexpo.com:7711/",
