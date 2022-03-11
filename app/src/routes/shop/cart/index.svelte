@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { browser } from "$app/env";
   import axios from "axios";
+  import { remove } from "lodash";
+  import { InCart, lengthCart } from "../../../stores";
 
   const l = console.log
 
@@ -29,12 +31,39 @@
   $: totalSum = (total - total * 0.05).toFixed(2);
 
 
+
+  const deleteProductFromCart = async (id) => {
+    remove(productsInCart, item => item.id === id);
+
+    const apiCart = {
+      baseURL: "https://adminexpo.com:7711/",
+      headers: {
+        Authorization: `Bearer 1`
+      }
+    };
+
+    const response = await axios.delete('delete-cart-one/' + id + '/' + localStorage.getItem('dataS'), apiCart);
+
+    l(response)
+  };
+
+
+
+
+
+
+
   //let count = 0;
   //$: quantity = count;
 
   //function handleClick() {
  //   count += 1;
  // }
+
+
+
+
+
 
 
 
@@ -164,7 +193,7 @@
 <!--                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>-->
 <!--                  </svg>-->
 <!--                </button>-->
-                <button
+                <button on:click={deleteProductFromCart(id)}
                   class="inline-flex items-center p-1.5 border border-transparent rounded-full shadow-sm text-white bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   type="button">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
