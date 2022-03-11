@@ -55,25 +55,12 @@
     await axios.delete('delete-cart-one/' + id + '/' + localStorage.getItem('dataS'), apiCart);
   };
 
-
-
-
-
-
-
   //let count = 0;
   //$: quantity = count;
 
   //function handleClick() {
  //   count += 1;
  // }
-
-
-
-
-
-
-
 
   function handleClick(id) {
     const total = productsInCart.reduce((sum, product) => {
