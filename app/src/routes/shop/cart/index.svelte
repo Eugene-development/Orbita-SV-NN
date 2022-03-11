@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { browser } from "$app/env";
   import axios from "axios";
-  import { remove } from "lodash";
+  import { reject } from "lodash";
   import { InCart, lengthCart } from "../../../stores";
 
   const l = console.log
@@ -33,7 +33,7 @@
 
 
   const deleteProductFromCart = async (id) => {
-    remove(productsInCart, item => item.id === id);
+    $: productsInCart = reject(productsInCart, item => item.id === id);
 
     const apiCart = {
       baseURL: "https://adminexpo.com:7711/",
