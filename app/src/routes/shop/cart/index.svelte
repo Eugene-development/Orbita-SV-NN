@@ -61,19 +61,15 @@
   $: address = "";
   $: comments = "";
 
-  const informationForm = {
-    name: first_name,
-    phone,
-    address,
-    comments
-  }
 
   const sendOrder = async () => {
 
-    informationForm.name = first_name;
-    informationForm.phone = phone;
-    informationForm.address = address;
-    informationForm.comments = comments;
+    const informationForm = {
+      name: first_name,
+      phone,
+      address,
+      comments
+    }
 
     const data = {
       products: productsInCart,
