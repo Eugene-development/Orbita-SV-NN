@@ -61,8 +61,11 @@
   $: address = "";
   $: comments = "";
 
+  const visibleSendOrder = true;
 
   const sendOrder = async () => {
+
+    const visibleSendOrder = false;
 
     const informationForm = {
       name: first_name,
@@ -98,6 +101,11 @@
 
     //Удаляем все значения inCart из localStorage
     await localStorage.removeItem('inCart');
+
+
+    const visibleLengthCart = 0;
+    lengthCart.update(() => currentValue(visibleLengthCart));
+
   }
 
   //let count = 0;
@@ -120,11 +128,6 @@
   <title>Корзина</title>
   <meta content="Корзина интернет-магазина компании 'Орбита строй'" name="description">
 </svelte:head>
-
-{first_name}
-{phone}
-{address}
-{comments}
 
 <div class="bg-gray-50">
   <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
@@ -420,17 +423,19 @@
         <!--      </div>-->
 
         <div class="flex justify-end mt-8">
+          {#if (visibleSendOrder)}
           <button on:click={sendOrder}
             class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
             type="submit">
             Отправить менеджеру
           </button>
+            {:else }
           <button
             class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
             type="button">
             Ожидайте подтверждения менеджера
           </button>
-
+            {/if}
         </div>
       </div>
 
