@@ -107,6 +107,10 @@
     lengthCart.update(() => currentValue(visibleLengthCart));
     $: productsInCart = []
 
+    let idProductsInCart = [];
+    InCart.update(() => idProductsInCart);
+
+
   }
 
   //let count = 0;
@@ -275,8 +279,8 @@
             </svg>
           </div>
           <div class="ml-3 flex-1 md:flex md:justify-between">
-            <p class="text-sm  text-blue-700">
-              Корзина пуста
+            <p class="text-sm text-blue-700">
+              Корзина пуста. Ждём вас снова за покупками.
             </p>
             <!--            <p class="mt-3 text-sm md:mt-0 md:ml-6">-->
             <!--              <a href="#" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">Назад <span aria-hidden="true">&rarr;</span></a>-->
@@ -424,19 +428,19 @@
         <!--      </div>-->
 
         <div class="flex justify-end mt-8">
-          {#if (visibleSendOrder)}
+          <!--{#if (visibleSendOrder)}-->
           <button on:click={sendOrder}
             class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
             type="submit">
             Отправить менеджеру
           </button>
-            {:else }
-          <button
-            class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"
-            type="button">
-            Ожидайте подтверждения менеджера
-          </button>
-            {/if}
+          <!--  {:else }-->
+          <!--<button-->
+          <!--  class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800"-->
+          <!--  type="button">-->
+          <!--  Ожидайте подтверждения менеджера-->
+          <!--</button>-->
+          <!--  {/if}-->
         </div>
       </div>
 
