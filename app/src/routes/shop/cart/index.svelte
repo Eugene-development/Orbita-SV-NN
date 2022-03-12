@@ -259,7 +259,7 @@
         <div class="mt-5 md:mt-0 md:col-span-2">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 ">
-              <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя</label>
+              <label class="block text-sm font-medium text-gray-700" for="first_name">Ваше имя:</label>
               <input
                 type="text"
                 required
@@ -268,19 +268,9 @@
                 name="first_name"
                 bind:value={first_name}
               >
-<!--              <input-->
-<!--                :class="{'bg-red-100': alertDanger.name}"-->
-<!--                :placeholder="[placeholder.name]"-->
-<!--                :value="ruleForm.name"-->
-<!--                @input="updateRuleFormName"-->
-<!--                id="first_name"-->
-<!--                autocomplete="given-name"-->
-<!--                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" name="first_name"-->
-<!--                type="text">-->
             </div>
-
             <div class="col-span-6">
-              <label class="block text-sm font-medium text-gray-700" for="phone">Телефон</label>
+              <label class="block text-sm font-medium text-gray-700" for="phone">Телефон:</label>
               <input
                 type="tel"
                 required
@@ -289,33 +279,8 @@
                 name="phone"
                 bind:value={phone}
               >
-
-              <!--              <input-->
-<!--                :class="{'bg-red-100': alertDanger.phone}"-->
-<!--                :placeholder="[placeholder.phone]"-->
-<!--                :value="ruleForm.phone"-->
-<!--                @input="updateRuleFormPhone"-->
-<!--                id="phone"-->
-<!--                autocomplete="phone"-->
-<!--                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"-->
-<!--                name="phone"-->
-<!--                type="text">-->
-<!--            </div>-->
-
-            <!--                <div class="col-span-6">-->
-            <!--                  <label class="block text-sm font-medium text-gray-700" for="email">Почта (необязательно)</label>-->
-            <!--                  <input-->
-            <!--                    :value="ruleForm.email"-->
-            <!--                    @input="updateRuleFormEmail"-->
-            <!--                    id="email"-->
-            <!--                    autocomplete="email"-->
-            <!--                    class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"-->
-            <!--                    name="email"-->
-            <!--                    type="email">-->
-            <!--                </div>-->
-
             <div class="col-span-6 mt-6">
-              <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки</label>
+              <label class="block text-sm font-medium text-gray-700" for="street_address">Адрес доставки:</label>
               <input
                 type="text"
                 id="street_address"
@@ -323,21 +288,9 @@
                 name="street_address"
                 bind:value={address}
               >
-
-              <!--              <input-->
-<!--                :class="{'bg-red-100': alertDanger.address}"-->
-<!--                :placeholder="[placeholder.address]"-->
-<!--                :value="ruleForm.address"-->
-<!--                @input="updateRuleFormAddress"-->
-<!--                id="street_address"-->
-<!--                autocomplete="street-address"-->
-<!--                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"-->
-<!--                name="street_address"-->
-<!--                type="text">-->
             </div>
-
             <div class="col-span-6 mt-6">
-              <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий</label>
+              <label class="block text-sm font-medium text-gray-700" for="comments">Комментарий:</label>
               <input
                 type="text"
                 id="comments"
@@ -345,19 +298,7 @@
                 name="comments"
                 bind:value={comments}
               >
-
-              <!--              <input-->
-<!--                :class="{'bg-red-100': alertDanger.comments}"-->
-<!--                :placeholder="[placeholder.comments]"-->
-<!--                :value="ruleForm.comments"-->
-<!--                @input="updateRuleFormComments"-->
-<!--                id="comments"-->
-<!--                autocomplete="street-address"-->
-<!--                class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"-->
-<!--                name="comments"-->
-<!--                type="text">-->
             </div>
-
           </div>
         </div>
       </div>
