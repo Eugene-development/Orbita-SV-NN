@@ -10,12 +10,8 @@
 
 
   const l = console.log;
-
   let productsInCart = [];
-  $: first_name = "";
-  $: phone = "";
-  $: address = "";
-  $: comments = "";
+
 
   onMount(async () => {
     const domain = import.meta.env.VITE_API_CART;
@@ -60,10 +56,52 @@
   };
 
 
+  $: first_name = "";
+  $: phone = "";
+  $: address = "";
+  $: comments = "";
 
+  const informationForm = {
+    name: first_name,
+    phone,
+    address,
+    comments
+  }
 
   const sendOrder = async () => {
-    l('123')
+
+    informationForm.name = first_name;
+    informationForm.phone = phone;
+    informationForm.address = address;
+    informationForm.comments = comments;
+
+    const data = {
+      products: productsInCart,
+      totalSum: totalSum,
+      information: informationForm
+    }
+
+    const apiMail = {
+      baseURL: "https://adminexpo.com:7721/",
+      headers: {
+        Authorization: `Bearer 1`
+      }
+    };
+
+    await axios.post('/sendOrder', data, apiMail);
+
+    const apiCart = {
+      baseURL: "https://adminexpo.com:7711/",
+      headers: {
+        Authorization: `Bearer 1`
+      }
+    };
+
+    //Удаляем все значения из бд по значению 'data' при отправке заказа на почту
+    await axios.delete('delete-cart-all/' + localStorage.getItem('dataS'), apiCart);
+
+    //Удаляем все значения inCart из localStorage
+    await localStorage.removeItem('inCart');
   }
 
   //let count = 0;
@@ -79,7 +117,6 @@
       price = product.size[0].price.price;
       return sum + price * product.quantity;
     }, 0);
-    l(total);
   }
 </script>
 
@@ -281,7 +318,7 @@
               <div class="col-span-6">
                 <label class="block text-sm font-medium text-gray-700" for="phone">Телефон:</label>
                 <input
-                  type="tel"
+                  type="text"
                   required
                   id="phone"
                   class="mt-1 focus:ring-red-800 focus:border-red-800 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
