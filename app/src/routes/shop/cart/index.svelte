@@ -105,6 +105,7 @@
 
     const visibleLengthCart = 0;
     lengthCart.update(() => currentValue(visibleLengthCart));
+    $: productsInCart = []
 
   }
 
