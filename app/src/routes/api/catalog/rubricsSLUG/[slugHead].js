@@ -10,7 +10,7 @@ export const get = async ({ params }) => {
   const heads = await axios(urlHead, { headers });
   let id;
   forEach(heads.data, async function(value) {
-    let obj = find(value, { "slug": slugHead });
+    let obj = find(value,{ "slug": slugHead });
     return id = obj.id
   });
   const url = `${domain}/get-head/${id}`;
