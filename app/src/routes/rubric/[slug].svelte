@@ -8,9 +8,9 @@
 
         let res;
         if (idHead) {
-            res = await fetch(`/api/catalog/rubrics/${idHead}`)
+            res = await fetch(`/api/catalog/rubricsID/${idHead}`)
         } else {
-            res = await fetch(`/api/catalog/rubricsHead/${slugHead}`)
+            res = await fetch(`/api/catalog/rubricsSLUG/${slugHead}`)
         }
 
         const resJSON = await res.json();
