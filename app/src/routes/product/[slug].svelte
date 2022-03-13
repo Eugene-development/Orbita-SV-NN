@@ -191,11 +191,6 @@
                         </div>
                         <div class="flex">
                             <span class="title-font font-medium text-4xl text-gray-900">{ size[0].price.price } р/{ unit }.</span>
-<!--                            <button-->
-
-<!--                                    class="flex ml-auto text-white bg-indigo-50 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
-<!--                                    >В корзину-->
-<!--                            </button>-->
                             {#if !(idProductsInCart).some(arrVal => id === arrVal)}
                             <button
                               on:click|preventDefault|once={sendToCart(id)}
