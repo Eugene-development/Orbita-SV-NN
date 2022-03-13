@@ -1,7 +1,6 @@
 import { forEach, find } from "lodash";
 export const get = async ({ params }) => {
   const { slugHead } = params;
-  console.log('123')
   const headers = {
     Authorization: `Bearer ${ import.meta.env.VITE_TOKEN }`
   }

@@ -1,8 +1,7 @@
 <script context="module">
-
   export const load = async ({ fetch, url }) => {
     const idCategory = url.searchParams.get("id");
-    const res = await fetch(`/api/catalog/products/${idCategory}`);
+    const res = await fetch(`/api/catalog/productsID/${idCategory}`);
     const resJSON = await res.json();
     const data = resJSON.products.data[0];
     const nameCategory = data.name;
@@ -146,7 +145,7 @@
                 {/if}
               </div>
               <div class="-ml-px w-0 flex-1 flex">
-                <!--                        <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
+                <!--                        <div v-if="productsInCart.some(arrVal => productID.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
 <!--                <div class="relative mx-8 flex-1 inline-flex items-center justify-center text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">-->
 <!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
 <!--                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->

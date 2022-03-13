@@ -1,7 +1,7 @@
 <script context="module">
     export const load = async ({fetch, url}) => {
         const idProduct = url.searchParams.get('id');
-        const res = await fetch(`/api/catalog/product/${idProduct}`)
+        const res = await fetch(`/api/catalog/productID/${idProduct}`)
         const resJSON = await res.json();
         const data = resJSON.product.data[0]
         const id = data.id
@@ -205,7 +205,7 @@
                             </button>
                             {/if}
 <!--                            <button-->
-<!--                                    class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex products-center justify-center text-gray-500 ml-4 hover:bg-red-900"-->
+<!--                                    class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex productsID-center justify-center text-gray-500 ml-4 hover:bg-red-900"-->
 <!--                                    wfd-id="156">-->
 <!--                                <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"-->
 <!--                                     stroke-width="2" viewBox="0 0 24 24">-->
