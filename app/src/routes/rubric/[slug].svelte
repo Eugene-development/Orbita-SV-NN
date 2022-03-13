@@ -1,8 +1,18 @@
 <script context="module">
 
+    const l = console.log
     export const load = async ({fetch, params, url}) => {
+
         const idHead = url.searchParams.get('id');
-        const res = await fetch(`/api/catalog/rubrics/${idHead}`)
+        const slugHead = params.slug;
+
+        let res;
+        if (idHead) {
+            res = await fetch(`/api/catalog/rubrics/${idHead}`)
+        } else {
+            res = await fetch(`/api/catalog/rubricsHead/${slugHead}`)
+        }
+
         const resJSON = await res.json();
         const data = resJSON.rubrics.data[0]
         const nameHead = data.name
