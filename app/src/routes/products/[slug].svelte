@@ -34,7 +34,6 @@
   import { useReturn } from "$lib/use/functions/return";
   import { browser } from "$app/env";
   import { onMount } from "svelte";
-  import { v4 as uuid } from "@lukeed/uuid";
 
   const { currentValue } = useReturn;
 
@@ -44,7 +43,6 @@
   export let products;
   export let pathAWS;
 
-  // TODO А если из хэлера забирать локал сторадж???? Для фикса бага перезагрузки
   const sendToCart = async (id) => {
     if (localStorage.getItem("inCart") === null) {
       localStorage.setItem("inCart", JSON.stringify([id]));

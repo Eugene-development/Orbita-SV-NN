@@ -4,6 +4,7 @@
         const res = await fetch(`/api/catalog/product/${idProduct}`)
         const resJSON = await res.json();
         const data = resJSON.product.data[0]
+        const id = data.id
         const nameProduct = data.name
         const descriptionProduct = data.description
         const idCategory = data.category.id
@@ -21,6 +22,7 @@
 
         return {
             props: {
+                id,
                 title,
                 description,
                 nameProduct,
@@ -39,7 +41,14 @@
 
 <script>
     import { useVisible } from "$lib/use/functions/visible";
-    import { descriptionInfo, paymentInfo, deliveryInfo } from "../../stores.js";
+    import { descriptionInfo, paymentInfo, deliveryInfo, lengthCart, InCart } from "../../stores.js";
+    import { concat } from "lodash";
+    import axios from "axios";
+    import { useReturn } from "$lib/use/functions/return";
+    import { onMount } from "svelte";
+    import { browser } from "$app/env";
+    const { currentValue } = useReturn;
+
 
     const { invertToTrue, invertToFalse } = useVisible;
 
@@ -67,8 +76,47 @@
     let visibleDelivery;
     deliveryInfo.subscribe(value => visibleDelivery = value);
 
+
+    const sendToCart = async (id) => {
+        if (localStorage.getItem("inCart") === null) {
+            localStorage.setItem("inCart", JSON.stringify([id]));
+        } else {
+            const itemsCart = JSON.parse(localStorage.getItem("inCart"));
+            const newItemsCart = concat(itemsCart, id);
+            localStorage.setItem("inCart", JSON.stringify(newItemsCart));
+        }
+        const productsInCart = JSON.parse(localStorage.getItem("inCart"));
+        const visibleLengthCart = productsInCart.length;
+        lengthCart.update(() => currentValue(visibleLengthCart));
+        InCart.update(() => productsInCart);
+
+
+        const url = `/store-cart`;
+        const payloadCart = {
+            product_id: id,
+            sessionUser: localStorage.getItem("dataS")
+        };
+        const apiCart = {
+            baseURL: "https://adminexpo.com:7711/",
+            headers: {
+                Authorization: `Bearer 1`
+            }
+        };
+        await axios.post(url, payloadCart, apiCart);
+    };
+
+    let idProductsInCart;
+    onMount(async () => {
+        if (browser && localStorage.getItem("inCart") !== null) {
+            idProductsInCart = JSON.parse(browser && localStorage.getItem("inCart"));
+        }
+    });
+    InCart.subscribe(value => idProductsInCart = value);
+
+
     export let title
     export let description
+    export let id
     export let nameProduct
     export let descriptionProduct
     export let idCategory
@@ -78,7 +126,6 @@
     export let image
     export let unit
     export let size
-
 
 </script>
 
@@ -149,12 +196,19 @@
 <!--                                    class="flex ml-auto text-white bg-indigo-50 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
 <!--                                    >В корзину-->
 <!--                            </button>-->
-                            <button type="button" class="ml-auto bg-indigo-50 border border-transparent rounded-md py-2 px-6 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">В корзину</button>
-
-                            <!--                            <button v-else-->
-<!--                                    class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"-->
-<!--                                    wfd-id="157">В корзине-->
-<!--                            </button>-->
+                            {#if !(idProductsInCart).some(arrVal => id === arrVal)}
+                            <button
+                              on:click|preventDefault|once={sendToCart(id)}
+                              type="button"
+                              class="ml-auto bg-indigo-50 border border-transparent rounded-md py-2 px-6 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+                                В корзину
+                            </button>
+                            {:else }
+                            <button
+                              class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded">
+                                В корзине
+                            </button>
+                            {/if}
 <!--                            <button-->
 <!--                                    class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex products-center justify-center text-gray-500 ml-4 hover:bg-red-900"-->
 <!--                                    wfd-id="156">-->
