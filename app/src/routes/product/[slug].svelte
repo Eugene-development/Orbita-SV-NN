@@ -138,25 +138,25 @@
     <div>
         <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
             <div class="flex flex-col text-center w-full">
-                <h1 class=" text-5xl font-medium title-font text-gray-900">{ nameProduct }</h1>
+                <h1 class=" text-5xl font-medium title-font text-slate-900">{ nameProduct }</h1>
             </div>
         </div>
 
-        <section class="text-gray-600 body-font overflow-hidden">
+        <section class="text-slate-600 body-font overflow-hidden">
             <div class="container px-2 py-24 mx-auto">
                 <div class="lg:w-4/5 mx-auto flex flex-wrap">
                     <div class="lg:w-1/2 w-full lg:pr-12 lg:py-6 mb-6 lg:mb-0">
-                        <h2 class="text-sm title-font text-gray-500 tracking-widest">НАИМЕНОВАНИЕ</h2>
-                        <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{ nameProduct }</h1>
+                        <h2 class="text-sm title-font text-slate-500 tracking-widest">НАИМЕНОВАНИЕ</h2>
+                        <h1 class="text-slate-900 text-3xl title-font font-medium mb-4">{ nameProduct }</h1>
                         <div class="flex mb-4">
                             <button on:click={changeVisibleDescriptionInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visibleDescription ? 'font-bold' : 'font-normal'}"
+                                    class="focus:outline-none flex-grow border-b-2 border-slate-300 py-2 text-lg px-1 {visibleDescription ? 'font-bold' : 'font-normal'}"
                             >Описание</button>
                             <button on:click={changeVisiblePaymentInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visiblePayment ? 'font-bold' : 'font-normal'}"
+                                    class="focus:outline-none flex-grow border-b-2 border-slate-300 py-2 text-lg px-1 {visiblePayment ? 'font-bold' : 'font-normal'}"
                             >Оплата</button>
                             <button on:click={changeVisibleDeliveryInfo}
-                                    class="focus:outline-none flex-grow border-b-2 border-gray-300 py-2 text-lg px-1 {visibleDelivery ? 'font-bold' : 'font-normal'}"
+                                    class="focus:outline-none flex-grow border-b-2 border-slate-300 py-2 text-lg px-1 {visibleDelivery ? 'font-bold' : 'font-normal'}"
                             >Доставка</button>
                         </div>
 
@@ -175,27 +175,27 @@
                         {/if}
 
                         <a sveltekit:prefetch sveltekit:noscroll href='/products/{slugCategory}/?id={idCategory}'>
-                            <div class="flex border-t border-gray-200 py-2">
-                                <span class="text-gray-500">Категория:</span>
+                            <div class="flex border-t border-slate-200 py-2">
+                                <span class="text-slate-500">Категория:</span>
                                 <span class="ml-auto text-red-900 hover:text-red-800">{ nameCategory }</span>
                             </div>
                         </a>
 
-                        <div class="flex border-t border-gray-200 py-2">
-                            <span class="text-gray-500">Единица измерения:</span>
-                            <span class="ml-auto text-gray-900">{ unit }</span>
+                        <div class="flex border-t border-slate-200 py-2">
+                            <span class="text-slate-500">Единица измерения:</span>
+                            <span class="ml-auto text-slate-900">{ unit }</span>
                         </div>
-                        <div class="flex border-t border-b mb-6 border-gray-200 py-2">
-                            <span class="text-gray-500">Наличие на складе:</span>
-                            <span class="ml-auto text-gray-900">Уточняйте у менеджера</span>
+                        <div class="flex border-t border-b mb-6 border-slate-200 py-2">
+                            <span class="text-slate-500">Наличие на складе:</span>
+                            <span class="ml-auto text-slate-900">Уточняйте у менеджера</span>
                         </div>
                         <div class="flex">
-                            <span class="title-font font-medium text-4xl text-gray-900">{ size[0].price.price } р/{ unit }.</span>
+                            <span class="title-font font-medium text-4xl text-slate-900">{ size[0].price.price } р/{ unit }.</span>
                             {#if !(idProductsInCart).some(arrVal => id === arrVal)}
                             <button
                               on:click|preventDefault|once={sendToCart(id)}
                               type="button"
-                              class="ml-auto bg-indigo-50 border border-transparent rounded-md py-2 px-6 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+                              class="ml-auto bg-indigo-50 border border-transparent rounded-md py-2 px-6 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-indigo-500">
                                 В корзину
                             </button>
                             {:else }
@@ -205,7 +205,7 @@
                             </button>
                             {/if}
 <!--                            <button-->
-<!--                                    class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex productsID-center justify-center text-gray-500 ml-4 hover:bg-red-900"-->
+<!--                                    class="rounded-full w-10 h-10 bg-slate-100 p-0 border-0 inline-flex productsID-center justify-center text-slate-500 ml-4 hover:bg-red-900"-->
 <!--                                    wfd-id="156">-->
 <!--                                <svg class="w-5 h-5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"-->
 <!--                                     stroke-width="2" viewBox="0 0 24 24">-->

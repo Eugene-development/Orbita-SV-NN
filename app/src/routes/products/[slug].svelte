@@ -89,7 +89,7 @@
   <div
     class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
     <div class="flex flex-col text-center w-full">
-      <h1 class=" text-5xl font-medium title-font text-gray-900">{ nameCategory } в Нижнем Новгороде</h1>
+      <h1 class=" text-5xl font-medium title-font text-slate-900">{ nameCategory } в Нижнем Новгороде</h1>
     </div>
   </div>
 
@@ -97,13 +97,13 @@
     <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {#each products as { id, name, slug, size, unit, image }}
         <li
-          class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-gray-200">
+          class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-slate-200">
           <a sveltekit:prefetch sveltekit:noscroll href="/product/{slug}/?id={id}">
             <div class="flex-1 flex flex-col p-8">
               <img src="{pathAWS}{image[0].filename}"
                    alt="product"
                    class="w-32 h-32 object-contain flex-shrink-0 mx-auto">
-              <h3 class="mt-6 text-gray-900 text-sm font-medium h-10">{ name }</h3>
+              <h3 class="mt-6 text-slate-900 text-sm font-medium h-10">{ name }</h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
                 <hr class="mt-4">
@@ -117,13 +117,13 @@
             </div>
           </a>
           <div>
-            <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="-mt-px flex divide-x divide-slate-200">
               <div class="w-0 flex-1 flex">
                 {#if !(idProductsInCart).some(arrVal => id === arrVal)}
                   <button
                     on:click|preventDefault|once={sendToCart(id)}
-                    class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-slate-700 font-medium border border-transparent rounded-bl-lg hover:text-slate-500">
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
@@ -133,8 +133,8 @@
                   </button>
                 {:else }
                   <button
-                    class="focus:outline-none relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-50 font-medium border border-transparent rounded-bl-lg hover:text-gray-100 bg-indigo-900">
-                    <svg class="w-5 h-5 text-gray-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    class="focus:outline-none relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-slate-50 font-medium border border-transparent rounded-bl-lg hover:text-slate-100 bg-indigo-900">
+                    <svg class="w-5 h-5 text-slate-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
@@ -146,13 +146,13 @@
               </div>
               <div class="-ml-px w-0 flex-1 flex">
                 <!--                        <div v-if="productsInCart.some(arrVal => productID.id === arrVal)" class="-ml-px w-0 flex-1 flex">-->
-<!--                <div class="relative mx-8 flex-1 inline-flex items-center justify-center text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">-->
+<!--                <div class="relative mx-8 flex-1 inline-flex items-center justify-center text-sm text-slate-700 font-medium border  border-transparent rounded-bl-lg hover:text-slate-500">-->
 <!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
 <!--                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />-->
 <!--                  </svg>-->
 
 <!--                    <div class="mt-1 mx-4">-->
-<!--                      <input type="email" name="email" id="email" class="h-6 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-center" placeholder="1">-->
+<!--                      <input type="email" name="email" id="email" class="h-6 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-slate-300 rounded-md text-center" placeholder="1">-->
 <!--                    </div>-->
 
 <!--                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" >-->
@@ -160,8 +160,8 @@
 <!--                  </svg>-->
 <!--                </div>-->
                 <a sveltekit:prefetch sveltekit:noscroll href="/product/{slug}/?id={id}"
-                   class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
-                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                   class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-slate-700 font-medium border  border-transparent rounded-bl-lg hover:text-slate-500">
+                  <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                        xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"
                           stroke-width="2" />

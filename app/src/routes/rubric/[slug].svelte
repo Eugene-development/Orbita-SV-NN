@@ -52,13 +52,13 @@
     <div class="pt-4 sm:pt-8 lg:pt-12">
         <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto space-y-2 lg:max-w-none">
-                <!--            <h2 class="text-lg leading-6 font-semibold text-gray-900 uppercase tracking-wider">-->
+                <!--            <h2 class="text-lg leading-6 font-semibold text-slate-900 uppercase tracking-wider">-->
                 <!--              Раздел-->
                 <!--            </h2>-->
-                <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
+                <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl lg:text-5xl">
                     {nameHead}
                 </h1>
-                <p class="text-xl text-gray-700">
+                <p class="text-xl text-slate-700">
                     Выберите интересующую вас рубрику в этом разделе.
                 </p>
             </div>
@@ -83,7 +83,7 @@
                             <div class="mt-4  text-center items-baseline text-2xl font-extrabold">
                                 { name }
                             </div>
-                            <!--                  <p class="mt-5 text-lg text-gray-500">-->
+                            <!--                  <p class="mt-5 text-lg text-slate-500">-->
                             <!--                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.-->
                             <!--                  </p>-->
                         </div>
@@ -96,7 +96,7 @@
                                 <!--                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />-->
                                 <!--                        </svg>-->
                                 <!--                      </div>-->
-                                <!--                      <p class="ml-3 text-base text-gray-700">-->
+                                <!--                      <p class="ml-3 text-base text-slate-700">-->
                                 <!--                        Pariatur quod similique-->
                                 <!--                      </p>-->
                                 <!--                    </li>-->
@@ -108,7 +108,7 @@
                                 <!--                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />-->
                                 <!--                        </svg>-->
                                 <!--                      </div>-->
-                                <!--                      <p class="ml-3 text-base text-gray-700">-->
+                                <!--                      <p class="ml-3 text-base text-slate-700">-->
                                 <!--                        Sapiente libero doloribus modi nostrum-->
                                 <!--                      </p>-->
                                 <!--                    </li>-->
@@ -120,7 +120,7 @@
                                 <!--                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />-->
                                 <!--                        </svg>-->
                                 <!--                      </div>-->
-                                <!--                      <p class="ml-3 text-base text-gray-700">-->
+                                <!--                      <p class="ml-3 text-base text-slate-700">-->
                                 <!--                        Vel ipsa esse repudiandae excepturi-->
                                 <!--                      </p>-->
                                 <!--                    </li>-->
@@ -132,7 +132,7 @@
                                 <!--                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />-->
                                 <!--                        </svg>-->
                                 <!--                      </div>-->
-                                <!--                      <p class="ml-3 text-base text-gray-700">-->
+                                <!--                      <p class="ml-3 text-base text-slate-700">-->
                                 <!--                        Itaque cupiditate adipisci quibusdam-->
                                 <!--                      </p>-->
                                 <!--                    </li>-->
@@ -152,19 +152,19 @@
         </div>
         <div class="mt-8 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-8">
             <div class="max-w-md mx-auto lg:max-w-7xl">
-                <div  class="rounded-lg bg-gray-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">
-                    <!--            <div v-for="(text, idx) of head.text" :key="text.id" class="rounded-lg bg-gray-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">-->
+                <div  class="rounded-lg bg-slate-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">
+                    <!--            <div v-for="(text, idx) of head.text" :key="text.id" class="rounded-lg bg-slate-50 px-6 py-8 sm:p-10 lg:flex lg:items-center">-->
                     <div class="flex-1">
                         <div>
-                            <h2 class="inline-flex px-4 py-1 rounded-full text-2xl font-semibold tracking-wide bg-white text-gray-800">
+                            <h2 class="inline-flex px-4 py-1 rounded-full text-2xl font-semibold tracking-wide bg-white text-slate-800">
                                 { text.titleText }
                             </h2>
                         </div>
-                        <div class="mt-8 text-lg text-gray-600">{@html text.text}</div>
+                        <div class="mt-8 text-lg text-slate-600">{@html text.text}</div>
                     </div>
                 </div>
                 <div class="mt-6 rounded-md shadow lg:flex-shrink-0">
-<!--                    <NuxtLink to="/information/discount" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-gray-50 hover:bg-gray-100">-->
+<!--                    <NuxtLink to="/information/discount" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-slate-50 hover:bg-slate-100">-->
 <!--                        &lt;!&ndash;{{ head.name }} со скидкой&ndash;&gt;-->
 <!--                    </NuxtLink>-->
                 </div>
