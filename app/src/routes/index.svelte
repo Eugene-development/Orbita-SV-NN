@@ -146,7 +146,7 @@
   ```
 -->
 <div class="bg-white">
-	<div class="max-w-2xl mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+	<div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 		<h2 class="sr-only">Products</h2>
 
 		<div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -154,7 +154,7 @@
 
 			{#each seasonalGoods as {id, name, price, unit, img, link}}
 			<a sveltekit:prefetch href="/{link}" class="group">
-				<div class="w-full aspect-w-1 aspect-h-1 bg-indigo-100 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+				<div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
 					<img src="{img}" alt="{name}." class="w-full h-full object-contain object-center group-hover:opacity-75">
 				</div>
 				<h3 class="mt-4 text-sm text-gray-700">{name}</h3>
@@ -174,7 +174,7 @@
 
 <div class="bg-white overflow-hidden">
 	<div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-		<div class="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
+		<div class="hidden lg:block bg-indigo-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
 		<div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
 			<div>
 				<h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Строительная база</h2>
