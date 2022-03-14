@@ -1,12 +1,22 @@
 <script context="module">
-  export const load = async ({ fetch, url }) => {
+  export const load = async ({ fetch, params, url }) => {
     const idCategory = url.searchParams.get("id");
-    const res = await fetch(`/api/catalog/productsID/${idCategory}`);
+    const slugCategory = params.slug;
+
+    let res;
+    if (idCategory) {
+      res = await fetch(`/api/catalog/productsID/${idCategory}`)
+    } else {
+      res = await fetch(`/api/catalog/productsSLUG/${slugCategory}`)
+    }
+
     const resJSON = await res.json();
     const data = resJSON.products.data[0];
     const nameCategory = data.name;
     const products = data.product;
     const pathAWS = resJSON.pathAWS;
+
+
 
 
     const seoTitle = data.seo ? data.seo.title : "Скидки и акции";
@@ -96,8 +106,7 @@
   <div class="p-8">
     <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {#each products as { id, name, slug, size, unit, image }}
-        <li
-          class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-slate-200">
+        <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg shadow-indigo-200/50 divide-y divide-slate-200 border-2 border-indigo-50 ring-offset-1 ring-1 ring-indigo-50">
           <a sveltekit:prefetch sveltekit:noscroll href="/product/{slug}/?id={id}">
             <div class="flex-1 flex flex-col p-8">
               <img src="{pathAWS}{image[0].filename}"
