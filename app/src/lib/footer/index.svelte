@@ -4,7 +4,7 @@
 </script>
 
 <div>
-    <div class="w-screen  py-10 bg-indigo-50">
+    <div class="w-screen py-10 bg-indigo-50">
         <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
             <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
                 <img class="h-22" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/brands/1.png" alt="Tuple">
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <footer class="bg-gray-900" aria-labelledby="footerHeading">
+    <footer class="bg-slate-900" aria-labelledby="footerHeading">
         <h2 id="footerHeading" class="sr-only">Footer</h2>
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">

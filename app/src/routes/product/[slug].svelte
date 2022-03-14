@@ -1,7 +1,15 @@
 <script context="module">
-    export const load = async ({fetch, url}) => {
+    export const load = async ({fetch, params, url}) => {
         const idProduct = url.searchParams.get('id');
-        const res = await fetch(`/api/catalog/productID/${idProduct}`)
+        const slugProduct = params.slug;
+
+        let res;
+        if (idProduct) {
+            res = await fetch(`/api/catalog/productID/${idProduct}`)
+        } else {
+            res = await fetch(`/api/catalog/productSLUG/${slugProduct}`)
+        }
+
         const resJSON = await res.json();
         const data = resJSON.product.data[0]
         const id = data.id
@@ -136,7 +144,7 @@
 
 <div>
     <div>
-        <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4">
+        <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50 to-white shadow-lg shadow-indigo-200/50 mb-4 ">
             <div class="flex flex-col text-center w-full">
                 <h1 class=" text-5xl font-medium title-font text-slate-900">{ nameProduct }</h1>
             </div>
@@ -216,7 +224,7 @@
                         </div>
                     </div>
 
-                    <img alt="ecommerce" class="lg:w-1/2 p-8 max-w-xl object-contain object-center rounded shadow-lg shadow-indigo-200/50" src="{pathAWS}{image[0].filename}">
+                    <img alt="ecommerce" class="lg:w-1/2 p-8 max-w-xl object-contain object-center rounded shadow-lg shadow-indigo-200/50 border-2 border-indigo-50 ring-offset-1 ring-1 ring-indigo-50" src="{pathAWS}{image[0].filename}">
 
                 </div>
             </div>
