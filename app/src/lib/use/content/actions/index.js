@@ -1,21 +1,25 @@
 const mainAction = [
     {
         id: 1,
-        stars: 3,
-        startDate: '1 марта',
+        stars: 4,
+        startDate: '15 марта',
         finishDate: '',
-        action: 'Техноблок по суперцене. Распродажа месяца.',
-        descriptionAction: 'ТЕХНОБЛОК – это негорючие, гидрофобизированные тепло-, звукоизоляционные плиты из минеральной ваты на основе горных пород базальтовой группы.',
+        action: 'Смесь для пола "юнис" горизонт универсальный (20 кг)',
+        descriptionAction: 'Стяжка цементная "Юнис Горизонт Универсальный" - быстротвердеющий наливной пол для внутренних работ в теплых помещениях. Применяется с бетонными, цементными стяжками на несущих основаниях, имеющих неровности от 2 до 100 мм. Может использоваться в ванных комнатах и кухнях.',
         oldPrice: 1,
-        newPrice : 1235,
+        newPrice : 350,
         unit: 'шт',
         characteristics: [
             {
                 id: 1,
-                descriptionCharacteristic: 'фыфыфыфыфыфы'
+                descriptionCharacteristic: 'Мешки по 20 кг'
+            },
+            {
+                id: 1,
+                descriptionCharacteristic: 'Сыпучий материал'
             },
         ],
-        img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/images/a12adc654dac54907a50bc61812e8093.jpg'
+        img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/images/%D1%8E%D1%83.jpg'
     }
 ]
 const actions = [
@@ -24,6 +28,13 @@ const actions = [
     //     price: '750 рублей',
     //     description: 'Только до 10 ноября! Специальное предложение при наличном расчете! Cкидки и акции не суммируются.'
     // },
+]
+
+const seasonalGoods = [
+    {
+     id: 1,
+
+    },
 ]
 
 export const useActions = {
