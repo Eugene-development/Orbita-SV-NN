@@ -34,7 +34,7 @@
     <div class="relative bg-gradient-to-tr from-indigo-500 via-indigo-600 to-indigo-500">
         <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div class="pr-16 sm:text-left">
-                <div class="font-medium text-white text-base">
+                <div class="font-medium text-white text-sm">
                     <span class="md:hidden"><strong>8 (800) 555-8-111</strong> (звонок бесплатный)<br> 8 (930) 688-88-62<br> 8 (902) 303-36-54</span>
                     <span class="hidden md:inline"><strong>8 (800) 555-8-111</strong> (звонок бесплатный) - 8 (930) 688-88-62 - 8 (902) 303-36-54</span>
                     <span class="block sm:ml-5 sm:inline-block">почта: <strong>info@orbita-stroy.com</strong></span>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="hidden lg:flex-1 lg:flex sm:items-center sm:justify-between">
                     <nav class="flex space-x-10 font-semibold">
-<!--                        <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>-->
+                        <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>
                         <a href="/company" class="text-lg text-indigo-900 hover:text-red-800">Компания</a>
                         <div>
                             <!-- Item active: "text-slate-900", Item inactive: "text-slate-500" -->
