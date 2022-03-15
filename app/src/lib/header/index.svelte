@@ -57,7 +57,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center md:ml-12">
+                <div class="flex items-center md:ml-12 md:hidden">
                     <a class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-800 shadow-lg shadow-indigo-700/50" href="/shop/cart"
                        sveltekit:noscroll>
                         <svg class="mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
