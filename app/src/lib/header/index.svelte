@@ -56,6 +56,20 @@
                         <img class="h-10 w-auto sm:h-10" src="https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/logo/logo.png" alt="Logo">
                     </a>
                 </div>
+
+                <div class="flex items-center md:ml-12">
+                    <a class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-800 shadow-lg shadow-indigo-700/50" href="/shop/cart"
+                       sveltekit:noscroll>
+                        <svg class="mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" />
+                        </svg>
+                        Корзина
+                        <div class="ml-1 animate-pulse">({countLengthCart})</div>
+                    </a>
+                </div>
+
                 <div class="-mr-2 -my-2 md:hidden">
                     <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-slate-500 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                         <span class="sr-only">Open menu</span>
