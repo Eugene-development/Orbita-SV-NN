@@ -137,31 +137,31 @@
                                         <div class="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                                             <div>
                                                 <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Последнее из блога</h3>
-                                                <ul role="list" class="mt-6 space-y-6">
-                                                    <li class="flow-root">
-                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
-                                                            <div class="hidden sm:block flex-shrink-0">
-                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80" alt="">
-                                                            </div>
-                                                            <div class="w-0 flex-1 sm:ml-8">
-                                                                <h4 class="text-base font-medium text-gray-900 truncate">Boost your conversion rate</h4>
-                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
+<!--                                                <ul role="list" class="mt-6 space-y-6">-->
+<!--                                                    <li class="flow-root">-->
+<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">-->
+<!--                                                            <div class="hidden sm:block flex-shrink-0">-->
+<!--                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80" alt="">-->
+<!--                                                            </div>-->
+<!--                                                            <div class="w-0 flex-1 sm:ml-8">-->
+<!--                                                                <h4 class="text-base font-medium text-gray-900 truncate">Boost your conversion rate</h4>-->
+<!--                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
+<!--                                                            </div>-->
+<!--                                                        </a>-->
+<!--                                                    </li>-->
 
-                                                    <li class="flow-root">
-                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
-                                                            <div class="hidden sm:block flex-shrink-0">
-                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80" alt="">
-                                                            </div>
-                                                            <div class="w-0 flex-1 sm:ml-8">
-                                                                <h4 class="text-base font-medium text-gray-900 truncate">How to use search engine optimization to drive traffic to your site</h4>
-                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+<!--                                                    <li class="flow-root">-->
+<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">-->
+<!--                                                            <div class="hidden sm:block flex-shrink-0">-->
+<!--                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80" alt="">-->
+<!--                                                            </div>-->
+<!--                                                            <div class="w-0 flex-1 sm:ml-8">-->
+<!--                                                                <h4 class="text-base font-medium text-gray-900 truncate">How to use search engine optimization to drive traffic to your site</h4>-->
+<!--                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
+<!--                                                            </div>-->
+<!--                                                        </a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
                                             </div>
                                             <div class="mt-6 text-sm font-medium">
                                                 <a href="/blog" on:click={changeVisibleInformationMenu} class="text-red-700 hover:text-red-800"> Перейти в блог <span aria-hidden="true">&rarr;</span></a>
@@ -171,7 +171,7 @@
                                 </div>
                             {/if}
                         </div>
-<!--                        <a href="/blog" class="text-lg text-indigo-900 hover:text-red-800"> Блог </a>-->
+                        <a href="/blog" class="text-lg text-indigo-900 hover:text-red-800"> Блог </a>
                         <a href="/information/contact" class="text-lg text-indigo-900 hover:text-red-800"> Контакты </a>
                         <a href="https://vk.com/orbita_stroy" target="_blank" class="text-lg text-indigo-900 hover:text-red-800"> VK </a>
                     </nav>
