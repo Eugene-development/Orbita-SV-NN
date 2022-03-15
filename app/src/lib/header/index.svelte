@@ -8,7 +8,7 @@
     import { onMount } from "svelte";
     import { browser } from "$app/env";
 
-    const { head, information } = useHead; //TODO влоенную деструктуризацию примени
+    const { head, information } = useHead;
     const { left: leftInfo, right: rightInfo } = information[0];
 
     const { invert } = useVisible;
