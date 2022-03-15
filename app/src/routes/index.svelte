@@ -17,7 +17,7 @@
 	<meta name="description" content="{description}">
 </svelte:head>
 
-<div class="mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="mt-12 max-w-7xl mx-auto px-6 lg:px-8">
 	<div class="lg:text-center">
 		<p class="text-base leading-6 text-teal-800 font-semibold tracking-wide uppercase"></p>
 		<h2 class=" mt-2 text-4xl leading-12 font-extrabold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
@@ -99,9 +99,7 @@
 					<div class="mt-4 prose prose-sm text-gray-500">
 						<ul role="list">
 							<li>Мешки по 20 кг</li>
-
 							<li>Сыпучий материал</li>
-
 						</ul>
 					</div>
 				</div>
@@ -114,7 +112,7 @@
 
 
 
-<div class="mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="mt-12 max-w-7xl mx-auto px-6 lg:px-8">
 	<div class="lg:text-center">
 		<p class="text-base leading-6 text-teal-800 font-semibold tracking-wide uppercase"></p>
 		<h2 class=" mt-2 text-4xl leading-12 font-extrabold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
@@ -166,18 +164,13 @@
 </div>
 
 
-
-
-
-
 <div class="bg-white overflow-hidden">
 	<div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 		<div class="hidden lg:block bg-indigo-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
 		<div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
 			<div>
 				<h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Строительная база</h2>
-				<h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-					Орбита-строй</h3>
+				<h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Орбита-строй</h3>
 			</div>
 		</div>
 		<div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
