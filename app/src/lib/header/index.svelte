@@ -57,8 +57,9 @@
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
-                    <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                    <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-slate-500 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                         <span class="sr-only">Open menu</span>
+                        <span class="mx-2">Меню</span>
                         <!-- Heroicon name: outline/menu -->
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -70,13 +71,13 @@
                         <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>
                         <a href="/company" class="text-lg text-indigo-900 hover:text-red-800">Компания</a>
                         <div>
-                            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+                            <!-- Item active: "text-slate-900", Item inactive: "text-slate-500" -->
                             <button on:click={changeVisibleInformationMenu} type="button" class="text-indigo-900 hover:text-red-800 group bg-white rounded-md inline-flex items-center text-lg focus:outline-none focus:text-red-700" aria-expanded="false">
                                 <span class="font-semibold">Информация</span>
                                 <!--
                                   Heroicon name: solid/chevron-down
 
-                                  Item active: "text-indigo-900", Item inactive: "text-gray-400"
+                                  Item active: "text-indigo-900", Item inactive: "text-slate-400"
                                 -->
                                 <svg class="text-red-700 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -97,16 +98,16 @@
                                 <div class="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
                                     <div class="absolute inset-0 flex">
                                         <div class="bg-white w-1/2"></div>
-                                        <div class="bg-gray-50 w-1/2"></div>
+                                        <div class="bg-slate-50 w-1/2"></div>
                                     </div>
                                     <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
                                         <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                             <div>
-<!--                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>-->
+<!--                                                <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">Company</h3>-->
                                                 <ul role="list" class="mt-5 space-y-6" use:clickOutside on:outclick={changeVisibleInformationMenu}>
                                                     {#each leftInfo as {href, displayName}}
                                                     <li class="flow-root">
-                                                        <a href="{href}" on:click={changeVisibleInformationMenu}  class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                                        <a href="{href}" on:click={changeVisibleInformationMenu}  class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-slate-900 hover:bg-slate-50">
                                                             <!-- Heroicon name: outline/information-circle -->
                                                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -118,11 +119,11 @@
                                                 </ul>
                                             </div>
                                             <div>
-<!--                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>-->
+<!--                                                <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">Resources</h3>-->
                                                 <ul role="list" class="mt-5 space-y-6">
                                                     {#each rightInfo as {href, displayName}}
                                                         <li class="flow-root">
-                                                            <a href="{href}" on:click={changeVisibleInformationMenu} on:outclick={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                                            <a href="{href}" on:click={changeVisibleInformationMenu} on:outclick={changeVisibleInformationMenu} class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-slate-900 hover:bg-slate-50">
                                                                 <!-- Heroicon name: outline/information-circle -->
                                                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -134,30 +135,30 @@
                                                 </ul>
                                             </div>
                                         </nav>
-                                        <div class="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
+                                        <div class="bg-slate-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                                             <div>
-                                                <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">Последнее из блога</h3>
+                                                <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">Последнее из блога</h3>
 <!--                                                <ul role="list" class="mt-6 space-y-6">-->
 <!--                                                    <li class="flow-root">-->
-<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">-->
+<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-slate-100">-->
 <!--                                                            <div class="hidden sm:block flex-shrink-0">-->
 <!--                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80" alt="">-->
 <!--                                                            </div>-->
 <!--                                                            <div class="w-0 flex-1 sm:ml-8">-->
-<!--                                                                <h4 class="text-base font-medium text-gray-900 truncate">Boost your conversion rate</h4>-->
-<!--                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
+<!--                                                                <h4 class="text-base font-medium text-slate-900 truncate">Boost your conversion rate</h4>-->
+<!--                                                                <p class="mt-1 text-sm text-slate-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
 <!--                                                            </div>-->
 <!--                                                        </a>-->
 <!--                                                    </li>-->
 
 <!--                                                    <li class="flow-root">-->
-<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-gray-100">-->
+<!--                                                        <a href="#" class="-m-3 p-3 flex rounded-lg hover:bg-slate-100">-->
 <!--                                                            <div class="hidden sm:block flex-shrink-0">-->
 <!--                                                                <img class="w-32 h-20 object-cover rounded-md" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80" alt="">-->
 <!--                                                            </div>-->
 <!--                                                            <div class="w-0 flex-1 sm:ml-8">-->
-<!--                                                                <h4 class="text-base font-medium text-gray-900 truncate">How to use search engine optimization to drive traffic to your site</h4>-->
-<!--                                                                <p class="mt-1 text-sm text-gray-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
+<!--                                                                <h4 class="text-base font-medium text-slate-900 truncate">How to use search engine optimization to drive traffic to your site</h4>-->
+<!--                                                                <p class="mt-1 text-sm text-slate-500">Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.</p>-->
 <!--                                                            </div>-->
 <!--                                                        </a>-->
 <!--                                                    </li>-->
@@ -209,14 +210,14 @@
         </div>
         <div class="mt-6 pb-4 bg-white sm:pb-8">
             <div class="relative">
-                <div class="absolute inset-0 h-1/2 bg-slate-100 border-b border-gray-200"></div>
+                <div class="absolute inset-0 h-1/2 bg-slate-100 border-b border-slate-200"></div>
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="w-full mx-auto">
                         <div class="rounded-lg bg-white shadow-xl shadow-indigo-700/50 lg:grid lg:grid-cols-7 ">
                             {#each head as {id, slug, name}}
                                 <a sveltekit:prefetch sveltekit:noscroll href='/rubric/{slug}/?id={id}'
-                                   class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-gray-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
-                                <span class="order-2 mt-1 text-base leading-6 font-medium text-gray-50">
+                                   class="flex flex-col bg-gradient-to-tr hover:bg-gradient-to-bl from-indigo-500 via-indigo-700 to-indigo-600 border-b border-slate-100 p-4 text-center sm:border-0 sm:border-r sm:border-l hover:bg-red-800">
+                                <span class="order-2 mt-1 text-base leading-6 font-medium text-slate-50">
                                     { name }
                                 </span>
                                 </a>
