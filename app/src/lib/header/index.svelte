@@ -49,7 +49,7 @@
     <div class="relative bg-white">
         <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
         <div class="relative z-20">
-            <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 sm:py-3 lg:px-8 md:justify-start md:space-x-10">
+            <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 sm:py-3 lg:px-8 md:space-x-8">
                 <div>
                     <a href="/" class="flex">
                         <span class="sr-only">Logo</span>
@@ -57,7 +57,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center md:ml-12 md:hidden">
+                <div class="flex items-center md:ml-12 lg:hidden">
                     <a class="ml-8 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-800 shadow-lg shadow-indigo-700/50" href="/shop/cart"
                        sveltekit:noscroll>
                         <svg class="mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -70,7 +70,7 @@
                     </a>
                 </div>
 
-                <div class="-mr-2 -my-2 md:hidden">
+                <div class="-mr-2 -my-2 lg:hidden">
                     <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-slate-500 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                         <span class="sr-only">Open menu</span>
                         <span class="mx-2">Меню</span>
@@ -80,9 +80,9 @@
                         </svg>
                     </button>
                 </div>
-                <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+                <div class="hidden lg:flex-1 lg:flex sm:items-center sm:justify-between">
                     <nav class="flex space-x-10 font-semibold">
-                        <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>
+<!--                        <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>-->
                         <a href="/company" class="text-lg text-indigo-900 hover:text-red-800">Компания</a>
                         <div>
                             <!-- Item active: "text-slate-900", Item inactive: "text-slate-500" -->
@@ -202,8 +202,11 @@
                             <div class="ml-1 animate-pulse">({countLengthCart})</div>
                         </a>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
         <MobileMenu/>
