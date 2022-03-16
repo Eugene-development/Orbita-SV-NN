@@ -4,7 +4,7 @@
 </svelte:head>
 
 
-<div class="bg-gray-100">
+<div class="bg-slate-100">
     <div class="w-full mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div class="relative bg-white shadow-xl">
             <h2 class="sr-only">Контакты</h2>

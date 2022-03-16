@@ -11,9 +11,16 @@
     const { head, information } = useHead;
     const { left: leftInfo, right: rightInfo } = information[0];
 
-    const { invert } = useVisible;
+    const { invert, invertToFalse } = useVisible;
 
-    const changeVisibleInformationMenu = () => informationMenu.update(invert);
+    const changeVisibleInformationMenu = () => {
+        informationMenu.update(invert);
+        console.log('111')
+    };
+    const closeVisibleInformationMenu = () => {
+        informationMenu.update(invertToFalse);
+        console.log('222')
+    };
     let visibleInformationMenu;
     informationMenu.subscribe(value => visibleInformationMenu = value);
 
@@ -84,7 +91,7 @@
                     <nav class="flex space-x-10 font-semibold">
                         <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>
                         <a href="/company" class="text-lg text-indigo-900 hover:text-red-800">Компания</a>
-                        <div>
+                        <div use:clickOutside on:outclick={changeVisibleInformationMenu}>
                             <!-- Item active: "text-slate-900", Item inactive: "text-slate-500" -->
                             <button on:click={changeVisibleInformationMenu} type="button" class="text-indigo-900 hover:text-red-800 group bg-white rounded-md inline-flex items-center text-lg focus:outline-none focus:text-red-700" aria-expanded="false">
                                 <span class="font-semibold">Информация</span>
@@ -118,10 +125,10 @@
                                         <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                             <div>
 <!--                                                <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">Company</h3>-->
-                                                <ul role="list" class="mt-5 space-y-6" use:clickOutside on:outclick={changeVisibleInformationMenu}>
+                                                <ul role="list" class="mt-5 space-y-6" >
                                                     {#each leftInfo as {href, displayName}}
                                                     <li class="flow-root">
-                                                        <a href="{href}" on:click={changeVisibleInformationMenu}  class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-slate-900 hover:bg-slate-50">
+                                                        <a href="{href}" on:click={closeVisibleInformationMenu}  class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-slate-900 hover:bg-slate-50">
                                                             <!-- Heroicon name: outline/information-circle -->
                                                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
