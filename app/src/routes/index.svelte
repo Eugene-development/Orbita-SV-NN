@@ -1,5 +1,43 @@
 <script context="module">
+	export const load = async ({fetch, params, url}) => {
+		let res;
+		res = await fetch(`/api/catalog/productID/466`)
 
+		const resJSON = await res.json();
+		const data = resJSON.product.data[0]
+		const id = data.id
+		const nameProduct = data.name
+		const descriptionProduct = data.description
+		const idCategory = data.category.id
+		const nameCategory = data.category.name
+		const slugCategory = data.category.slug
+		const pathAWS = resJSON.pathAWS
+		const image = data.image
+		const unit = data.unit
+		const size = data.size
+
+		const seoTitle =  data.seo ? data.seo.title : 'Строительные и отделочные материалы'
+		const seoDescription = data.seo ? data.seo.description : "Строительные и отделочные материалы в Нижнем Новгороде"
+		const title = nameProduct + ' в Нижнем Новгороде || ' + seoTitle
+		const description = nameProduct + ' в наличии в Нижнем Новгороде. ' + seoDescription
+
+		return {
+			props: {
+				id,
+				title,
+				description,
+				nameProduct,
+				descriptionProduct,
+				idCategory,
+				slugCategory,
+				nameCategory,
+				pathAWS,
+				image,
+				unit,
+				size
+			}
+		}
+	}
 </script>
 
 <script>
@@ -55,6 +93,17 @@
 	const title = "База строительных и отделочных материалов \"Орбита-Строй\"";
 	const description = "Интернет-магазин строительных и отделочных материалов \"Орбита-строй\"";
 
+	export let id
+	export let nameProduct
+	export let descriptionProduct
+	export let idCategory
+	export let slugCategory
+	export let nameCategory
+	export let pathAWS
+	export let image
+	export let unit
+	export let size
+
 </script>
 
 <svelte:head>
@@ -81,7 +130,7 @@
 			<!-- Product image -->
 			<div class="lg:row-end-1 lg:col-span-4">
 				<div class="aspect-w-4 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden">
-					<img src="{mainAction[0].img}" alt="action product" class="object-center object-cover">
+					<img src="{pathAWS}{image[0].filename}" alt="action product" class="object-center object-cover">
 				</div>
 			</div>
 
@@ -89,7 +138,7 @@
 			<div class="max-w-2xl mx-auto mt-14 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
 				<div class="flex flex-col-reverse">
 					<div class="mt-4">
-						<h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{mainAction[0].action}</h1>
+						<h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{nameProduct}</h1>
 
 						<h2 id="information-heading" class="sr-only">Информация по акции</h2>
 						<p class="text-sm text-gray-500 mt-2">Акция действует с {mainAction[0].startDate} 2022 года</p>
@@ -132,16 +181,16 @@
 					</div>
 				</div>
 
-				<p class="text-gray-500 mt-6">{mainAction[0].descriptionAction}</p>
+				<p class="text-gray-500 mt-6">{@html descriptionProduct}</p>
 
 				<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
 					<button class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
-									type="button">{mainAction[0].newPrice}
-						р/{mainAction[0].unit}</button>
+									type="button">{size[0].price.price}
+						р/{unit}</button>
 
-					{#if !(idProductsInCart).some(arrVal => 466 === arrVal)}
+					{#if !(idProductsInCart).some(arrVal => id === arrVal)}
 						<button
-							on:click|preventDefault|once={sendToCart(466)}
+							on:click|once={sendToCart(id)}
 							type="button"
 							class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
 							В корзину
@@ -149,7 +198,7 @@
 					{:else }
 						<button
 							type="button"
-							class="w-full bg-red-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+							class="w-full bg-red-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
 							В корзине
 						</button>
 					{/if}
