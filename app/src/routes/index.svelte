@@ -96,9 +96,6 @@
 	export let id
 	export let nameProduct
 	export let descriptionProduct
-	export let idCategory
-	export let slugCategory
-	export let nameCategory
 	export let pathAWS
 	export let image
 	export let unit
@@ -207,7 +204,7 @@
 				<div class="border-t border-gray-200 mt-10 pt-10">
 					<h3 class="text-sm font-medium text-gray-900">Характеристики:</h3>
 					<div class="mt-4 prose prose-sm text-gray-500">
-						<ul role="list">
+						<ul>
 							<li>Мешки по 20 кг</li>
 							<li>Сыпучий материал</li>
 						</ul>

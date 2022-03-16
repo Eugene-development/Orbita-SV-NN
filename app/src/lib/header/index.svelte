@@ -4,7 +4,7 @@
     import MobileMenu from "./mobile/index.svelte";
     import { useHead } from "$lib/use/content/header";
     import { useVisible } from "$lib/use/functions/visible";
-    import { informationMenu, lengthCart } from "../../stores.js";
+    import { informationMenu, lengthCart, mobileMenu } from "../../stores.js";
     import { onMount } from "svelte";
     import { browser } from "$app/env";
 
@@ -33,6 +33,11 @@
         }
     });
     lengthCart.subscribe(value => countLengthCart = value)
+
+    const changeVisibleMobileMenu = () => mobileMenu.update(invert);
+    let visibleMobileMenu;
+    mobileMenu.subscribe(value => visibleMobileMenu = value);
+
 
 </script>
 
@@ -78,7 +83,7 @@
                 </div>
 
                 <div class="-mr-2 -my-2 lg:hidden">
-                    <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-slate-500 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                    <button on:click={changeVisibleMobileMenu} type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-slate-500 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                         <span class="sr-only">Open menu</span>
                         <span class="mx-2">Меню</span>
                         <!-- Heroicon name: outline/menu -->
