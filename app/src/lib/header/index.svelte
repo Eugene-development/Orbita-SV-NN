@@ -91,7 +91,7 @@
                     <nav class="flex space-x-10 font-semibold">
                         <a href="/" class="text-lg text-indigo-900 hover:text-red-800">Главная</a>
                         <a href="/company" class="text-lg text-indigo-900 hover:text-red-800">Компания</a>
-                        <div use:clickOutside on:outclick={changeVisibleInformationMenu}>
+                        <div use:clickOutside on:outclick={closeVisibleInformationMenu}>
                             <!-- Item active: "text-slate-900", Item inactive: "text-slate-500" -->
                             <button on:click={changeVisibleInformationMenu} type="button" class="text-indigo-900 hover:text-red-800 group bg-white rounded-md inline-flex items-center text-lg focus:outline-none focus:text-red-700" aria-expanded="false">
                                 <span class="font-semibold">Информация</span>

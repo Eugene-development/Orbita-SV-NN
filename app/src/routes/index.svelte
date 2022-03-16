@@ -3,12 +3,57 @@
 </script>
 
 <script>
-	import {useActions} from "$lib/use/content/actions";
-	const {mainAction, seasonalGoods} = useActions;
+	import { useActions } from "$lib/use/content/actions";
+	import { concat } from "lodash";
+	import { InCart, lengthCart } from "../stores";
+	import axios from "axios";
+	import { onMount } from "svelte";
+	import { browser } from "$app/env";
+	import { useReturn } from "$lib/use/functions/return";
 
-	const page = 'Главная';
-	const title = 'База строительных и отделочных материалов "Орбита-Строй"'
-	const description = 'Интернет-магазин строительных и отделочных материалов "Орбита-строй"\n'
+	const { mainAction, seasonalGoods } = useActions;
+	const { currentValue } = useReturn;
+
+	const sendToCart = async (id) => {
+		if (localStorage.getItem("inCart") === null) {
+			localStorage.setItem("inCart", JSON.stringify([id]));
+		} else {
+			const itemsCart = JSON.parse(localStorage.getItem("inCart"));
+			const newItemsCart = concat(itemsCart, id);
+			localStorage.setItem("inCart", JSON.stringify(newItemsCart));
+		}
+		const productsInCart = JSON.parse(localStorage.getItem("inCart"));
+		const visibleLengthCart = productsInCart.length;
+		lengthCart.update(() => currentValue(visibleLengthCart));
+		InCart.update(() => productsInCart);
+
+
+		const url = `/store-cart`;
+		const payloadCart = {
+			product_id: id,
+			sessionUser: localStorage.getItem("dataS")
+		};
+		const apiCart = {
+			baseURL: "https://adminexpo.com:7711/",
+			headers: {
+				Authorization: `Bearer 1`
+			}
+		};
+		await axios.post(url, payloadCart, apiCart);
+	};
+
+	let idProductsInCart;
+	onMount(async () => {
+		if (browser && localStorage.getItem("inCart") !== null) {
+			idProductsInCart = JSON.parse(browser && localStorage.getItem("inCart"));
+		}
+	});
+	InCart.subscribe(value => idProductsInCart = value);
+
+
+	const page = "Главная";
+	const title = "База строительных и отделочных материалов \"Орбита-Строй\"";
+	const description = "Интернет-магазин строительных и отделочных материалов \"Орбита-строй\"";
 
 </script>
 
@@ -90,8 +135,24 @@
 				<p class="text-gray-500 mt-6">{mainAction[0].descriptionAction}</p>
 
 				<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-					<button type="button" class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">{mainAction[0].newPrice} р/{mainAction[0].unit}</button>
-					<button type="button" class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">В корзину</button>
+					<button class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+									type="button">{mainAction[0].newPrice}
+						р/{mainAction[0].unit}</button>
+
+					{#if !(idProductsInCart).some(arrVal => 466 === arrVal)}
+						<button
+							on:click|preventDefault|once={sendToCart(466)}
+							type="button"
+							class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+							В корзину
+						</button>
+					{:else }
+						<button
+							type="button"
+							class="w-full bg-red-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+							В корзине
+						</button>
+					{/if}
 				</div>
 
 				<div class="border-t border-gray-200 mt-10 pt-10">

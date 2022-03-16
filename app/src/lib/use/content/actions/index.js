@@ -1,6 +1,6 @@
 const mainAction = [
     {
-        id: 1,
+        id: 466,
         stars: 4,
         startDate: '15 марта',
         finishDate: '',
